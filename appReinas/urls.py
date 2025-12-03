@@ -16,4 +16,5 @@ urlpatterns = [
     path('calendario', views.eventos, name='calendario'),
     path('tienda', views.tienda, name='tienda'),
     path('', views.index, name='index'),
+ 
 ]

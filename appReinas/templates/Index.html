@@ -11,7 +11,7 @@
         content="Reinas del Caribe, voleibol femenino, República Dominicana, selección nacional, jugadoras, torneos, resultados, noticias, deporte dominicano, equipo de voleibol">
     <meta name="author" content="Isabel Nakari De la Cruz Prevost">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="Img/Logo.jpg" type="image/jpg">
+    <link rel="icon" href="{% static 'Img/Logo.jpg' %}" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Momo+Trust+Display&display=swap"
@@ -32,8 +32,8 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark header-nav">
             <div class="container-fluid justify-content-center">
-                <a href="index.html" class="navbar-brand">
-                    <img height="65px" src="Img/Logo.jpg" alt="Logo Reinas del Caribe" class="logo-navbar">
+                <a href="{% url 'index' %}" class="navbar-brand">
+                    <img height="65px" src="{% static 'Img/Logo.jpg' %}" alt="Logo Reinas del Caribe" class="logo-navbar">
                 </a>
                 <!-- Botón -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -68,9 +68,9 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link text-white" href="Galeria.html">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="Tienda.html">Tienda</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="Noticias.html">Noticias</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'galeria' %}">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'tienda' %}">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'noticias' %}">Noticias</a></li>
                     </ul>
                 </div>
             </div>
@@ -81,7 +81,7 @@
         <div class="header_texto">
             <h1 class="logo_nombre no-margin centrar-texto"><span class="logo__bold">Reinas del Caribe</span></h1>
             <p class="no-margin">La casa del voleibol dominicano</p>
-            <a href="Jugadoras.html" class="boton boton--primario">¡Conoce al equipo!</a>
+            <a href="{% url 'jugadoras' %}" class="boton boton--primario">¡Conoce al equipo!</a>
         </div>
     </header>
 
@@ -127,14 +127,14 @@
                 <!-- Card 1 -->
                 <div class="col">
                     <div class="card h-100 shadow-sm">
-                        <img src="Img/BrayelinMartinez2.jpg" class="card-img-top" alt="Brayelin Martínez">
+                        <img src="{% static 'Img/BrayelinMartinez2.jpg' %}" class="card-img-top" alt="Brayelin Martínez">
                         <div class="card-body text-center">
                             <h3 class="card-title fw-bold">Brayelin Martínez</h3>
                             <p class="card-text">
                                 Potente atacante dominicana, reconocida por su energía y liderazgo en la cancha. Siempre
                                 sobresaliendo.
                             </p>
-                            <a href="Jugadoras.html" class="boton boton--cards">Leer más</a>
+                            <a href="{% url 'jugadoras' %}" class="boton boton--cards">Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -142,14 +142,14 @@
                 <!-- Card 2 -->
                 <div class="col">
                     <div class="card h-100 shadow-sm">
-                        <img src="Img/GailaGonzalez.jpg" class="card-img-top" alt="Gaila González">
+                        <img src="{% static 'Img/GailaGonzalez.jpg' %}" class="card-img-top" alt="Gaila González">
                         <div class="card-body text-center">
                             <h3 class="card-title fw-bold">Gaila González</h3>
                             <p class="card-text">
                                 Una de las mejores atacantes del Caribe, con un remate potente y determinación
                                 inigualable.
                             </p>
-                            <a href="Jugadoras.html" class="boton boton--cards">Leer más</a>
+                            <a href="{% url 'jugadoras' %}" class="boton boton--cards">Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -157,14 +157,14 @@
                 <!-- Card 3 -->
                 <div class="col">
                     <div class="card h-100 shadow-sm">
-                        <img src="Img/BrendaCastillo2.webp" class="card-img-top" alt="Brenda Castillo">
+                        <img src="{% static 'Img/BrendaCastillo2.webp' %}" class="card-img-top" alt="Brenda Castillo">
                         <div class="card-body text-center">
                             <h3 class="card-title fw-bold">Brenda Castillo</h3>
                             <p class="card-text">
                                 Legendaria jugadora dominicana, símbolo de pasión, entrega y orgullo dominicano.
                                 Considerada la mejor libero
                             </p>
-                            <a href="Jugadoras.html" class="boton boton--cards">Leer más</a>
+                            <a href="{% url 'jugadoras' %}" class="boton boton--cards">Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -172,7 +172,7 @@
             </div> <!-- fin row -->
 
             <!-- 🔹 Botón final -->
-            <a href="Jugadoras.html" class="boton boton--primario mt-5">Conócelas a todas</a>
+            <a href="{% url 'jugadoras' %}" class="boton boton--primario mt-5">Conócelas a todas</a>
 
         </div>
     </section>
@@ -189,7 +189,7 @@
                         22/12/2025
                     </div>
                     <div class="card-body">
-                        <img src="Img/Reinas2.jpg" alt="VNL" class="img-fluid mb-3 rounded">
+                        <img src="{% static 'Img/Reinas2.jpg' %}" alt="VNL" class="img-fluid mb-3 rounded">
                         <a href="Torneos.html">Liga de Naciones</a>
                         <p class="card-text">
                             Las Reinas del Caribe dominaron todo el torneo sin perder un solo set. Las Reinas del Caribe
@@ -211,7 +211,7 @@
                         15/10/2025
                     </div>
                     <div class="card-body">
-                        <img src="Img/Reinas4.jpg" alt="Panamericana" class="img-fluid mb-3 rounded">
+                        <img src="{% static 'Img/Reinas4.jpg' %}" alt="Panamericana" class="img-fluid mb-3 rounded">
                         <a href="Torneos.html">Copa Panamericana</a>
                         <p class="card-text">
                             Las Reinas del Caribe dominaron todo el torneo sin perder un solo set. Las Reinas del Caribe
@@ -251,7 +251,7 @@
                 <div class="carousel-inner">
                     <!-- Primera imagen -->
                     <div class="carousel-item active">
-                        <img src="Img/Reinas4.jpg" class="d-block w-100" alt="...">
+                        <img src="{% static 'Img/Reinas4.jpg' %}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Victoria en la Copa Panamericana</h3>
                             <p>Las Reinas del Caribe logran el primer lugar tras una final épica.</p>
@@ -259,7 +259,7 @@
                     </div>
                     <!-- Segunda imagen -->
                     <div class="carousel-item">
-                        <img src="Img/Reinas4.jpg" class="d-block w-100" alt="Entrenamiento del equipo dominicano">
+                        <img src="{% static 'Img/Reinas4.jpg' %}" class="d-block w-100" alt="Entrenamiento del equipo dominicano">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Entrenamiento previo a París 2025</h3>
                             <p>Preparación intensa rumbo a los Juegos Olímpicos.</p>
@@ -267,7 +267,7 @@
                     </div>
                     <!-- Tercera imagen -->
                     <div class="carousel-item">
-                        <img src="Img/Reinas4.jpg" class="d-block w-100" alt="Equipo celebrando en el podio">
+                        <img src="{% static 'Img/Reinas4.jpg' %}" class="d-block w-100" alt="Equipo celebrando en el podio">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Orgullo dominicano</h3>
                             <p>El equipo celebra una nueva victoria para el país.</p>
@@ -275,7 +275,7 @@
                     </div>
                     <!-- Cuarta imagen -->
                     <div class="carousel-item">
-                        <img src="Img/Reinas4.jpg" class="d-block w-100" alt="Equipo celebrando en el podio">
+                        <img src="{% static 'Img/Reinas4.jpg' %}" class="d-block w-100" alt="Equipo celebrando en el podio">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Orgullo dominicano</h3>
                             <p>El equipo celebra una nueva victoria para el país.</p>
@@ -283,7 +283,7 @@
                     </div>
                     <!-- Quinta imagen -->
                     <div class="carousel-item">
-                        <img src="Img/Reinas4.jpg" class="d-block w-100" alt="Equipo celebrando en el podio">
+                        <img src="{% static 'Img/Reinas4.jpg' %}" class="d-block w-100" alt="Equipo celebrando en el podio">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Orgullo dominicano</h3>
                             <p>El equipo celebra una nueva victoria para el país.</p>
@@ -291,7 +291,7 @@
                     </div>
                     <!-- Sexta imagen -->
                     <div class="carousel-item">
-                        <img src="Img/Reinas4.jpg" class="d-block w-100" alt="Equipo celebrando en el podio">
+                        <img src="{% static 'Img/Reinas4.jpg' %}" class="d-block w-100" alt="Equipo celebrando en el podio">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Orgullo dominicano</h3>
                             <p>El equipo celebra una nueva victoria para el país.</p>
@@ -317,28 +317,28 @@
 
             <div class="noticias_grid">
                 <div class="noticia">
-                    <img src="Img/BrayelinMartinez.jpg" alt="Reinas del Caribe ganan la Copa Panamericana"
+                    <img src="{% static 'Img/BrayelinMartinez.jpg' %}" alt="Reinas del Caribe ganan la Copa Panamericana"
                         class="noticia-img">
                     <h3 class="titulo-noticia">Reinas del Caribe ganan la Copa Panamericana</h3>
                 </div>
 
                 <div class="noticia">
-                    <img src="Img/BrendaCastillo.jpg" alt="Brenda Castillo es elegida mejor líbero" class="noticia-img">
+                    <img src="{% static 'Img/BrendaCastillo.jpg' %}" alt="Brenda Castillo es elegida mejor líbero" class="noticia-img">
                     <h3 class="titulo-noticia">Brenda Castillo es elegida mejor líbero</h3>
                 </div>
 
                 <div class="noticia">
-                    <img src="Img/GailaGonzalez.jpg" alt="Dominicana avanza a semifinales" class="noticia-img">
+                    <img src="{% static 'Img/GailaGonzalez.jpg' %}" alt="Dominicana avanza a semifinales" class="noticia-img">
                     <h3 class="titulo-noticia">Dominicana avanza a semifinales</h3>
                 </div>
 
                 <div class="noticia">
-                    <img src="Img/Reinas1.jpg" alt="Nuevas jugadoras se integran al equipo" class="noticia-img">
+                    <img src="{% static 'Img/Reinas1.jpg' %}" alt="Nuevas jugadoras se integran al equipo" class="noticia-img">
                     <h3 class="titulo-noticia">Nuevas jugadoras se integran al equipo</h3>
                 </div>
 
                 <div class="noticia noticia-grande">
-                    <img src="Img/Reinas4.1.png" alt="Las Reinas preparan su participación en París 2025"
+                    <img src="{% static 'Img/Reinas4.1.png' %}" alt="Las Reinas preparan su participación en París 2025"
                         class="noticia-img">
                     <h3 class="titulo-noticia">Las Reinas preparan su participación en París 2025</h3>
                 </div>
@@ -352,7 +352,7 @@
         <div class="contenedor_tienda">
             <!-- Card 1 -->
             <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Brayelin Martínez">
+                <img src="{% static 'Img/BrayelinMartinez2.jpg' %}" alt="Brayelin Martínez">
                 <div class="card-body">
                     <h5 class="card-title">Camiseta Oficial</h5>
                     <p class="card-text">Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y
@@ -362,7 +362,7 @@
 
             <!-- Card 2 -->
             <div class="card">
-                <img src="Img/GailaGonzalez.jpg" alt="Gorra oficial">
+                <img src="{% static 'Img/GailaGonzalez.jpg' %}" alt="Gorra oficial">
                 <div class="card-body">
                     <h5 class="card-title">Gorra Oficial</h5>
                     <p class="card-text">Gorra bordada con el logo del equipo, ajustable y disponible en varios
@@ -373,7 +373,7 @@
 
             <!-- Card 3 -->
             <div class="card">
-                <img src="Img/BrendaCastillo2.webp" alt="Pulsera del equipo">
+                <img src="{% static 'Img/BrendaCastillo2.webp' %}" alt="Pulsera del equipo">
                 <div class="card-body">
                     <h5 class="card-title">Pulsera del equipo</h5>
                     <p class="card-text">Pulsera conmemorativa en silicona, con el escudo y colores dominicanos.
@@ -383,7 +383,7 @@
 
             <!-- Card 4 -->
             <div class="card">
-                <img src="Img/Reinas2.jpg" alt="Póster oficial">
+                <img src="{% static 'Img/Reinas2.jpg' %}" alt="Póster oficial">
                 <div class="card-body">
                     <h5 class="card-title">Póster Oficial</h5>
                     <p class="card-text">Póster tamaño A3 con las jugadoras campeonas de la Copa Panamericana
@@ -393,7 +393,7 @@
         </div>
 
         <div class="boton-centro">
-            <a href="Tienda.html" class="boton boton--primario">Ir a la tienda</a>
+            <a href="{% url 'tienda' %}" class="boton boton--primario">Ir a la tienda</a>
         </div>
     </section>
 
@@ -405,7 +405,7 @@
 
                 <!-- Columna 1: Logo y descripción -->
                 <div class="col-md-4 mb-4">
-                    <img src="Img/Logo.jpg" alt="Logo Reinas del Caribe" class="footer-logo mb-3">
+                    <img src="{% static 'Img/Logo.jpg' %}" alt="Logo Reinas del Caribe" class="footer-logo mb-3">
                     <h3 class="footer-titulo">Reinas del Caribe</h3>
                     <p class="footer-texto">
                         Página creada para compartir información, logros y la pasión por el voleibol femenino
@@ -417,12 +417,12 @@
                 <div class="col-md-4 mb-4">
                     <h4 class="footer-subtitulo">Enlaces útiles</h4>
                     <ul class="footer-enlaces list-unstyled">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="jugadoras.html">Jugadoras</a></li>
-                        <li><a href="torneos.html">Torneos y Resultados</a></li>
-                        <li><a href="noticias.html">Noticias</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="Enlaces.html">Enlaces</a></li>
+                        <li><a href="{% url 'index' %}">Inicio</a></li>
+                        <li><a href="{% url 'jugadoras' %}">Jugadoras</a></li>
+                        <li><a href="{% url 'torneos' %}">Torneos y Resultados</a></li>
+                        <li><a href="{% url 'noticias' %}">Noticias</a></li>
+                        <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                        <li><a href="{% url 'enlaces' %}">Enlaces</a></li>
                         <li><a href="#" data-bs-toggle="modal" data-bs-target="#politicasModal">Políticas de
                                 Privacidad</a></li>
                     </ul>
