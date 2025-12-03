@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sitio web oficial no afiliado de las Reinas del Caribe, la selección femenina de voleibol de República Dominicana. Conoce su historia, jugadoras destacadas, torneos, resultados, galería y noticias recientes.">
+    <meta name="keywords"
+        content="Reinas del Caribe, voleibol femenino, República Dominicana, selección nacional, jugadoras, torneos, resultados, noticias, deporte dominicano, equipo de voleibol">
+    <meta name="author" content="Isabel Nakari De la Cruz Prevost">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="Img/Logo.jpg" type="image/jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Momo+Trust+Display&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Reinas del Caribe | Voleibol Femenino Dominicano</title>
+</head>
+
+<body>
+    <header class="header no-margin no-padding">
+        <div class="overlay"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark header-nav">
+            <div class="container-fluid justify-content-center">
+                <a href="index.html" class="navbar-brand">
+                    <img height="65px" src="Img/Logo.jpg" alt="Logo Reinas del Caribe" class="logo-navbar">
+                </a>
+                <!-- Botón -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú -->
+                <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                    <ul class="nav nav-underline d-flex flex-row gap-5">
+                        <li class="nav-item"><a class="nav-link text-white" href="Index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link  text-white" href="Historia.html">Historia</a></li>
+
+                        <!-- Dropdown: Equipo -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Equipo</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Jugadoras.html">Jugadoras</a></li>
+                                <li><a class="dropdown-item" href="Entrenadores.html">Entrenadores</a></li>
+                                <li><a class="dropdown-item" href="Directiva.html">Directiva</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Dropdown: Eventos (¡se mantiene!) -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Eventos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Torneos.html">Torneos y resultados</a></li>
+                                <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link text-white" href="Galeria.html">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="Tienda.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="Noticias.html">Noticias</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Texto central del header -->
+        <div class="header_texto">
+            <h1 class="logo_nombre no-margin centrar-texto"><span class="logo__bold">Reinas del Caribe</span></h1>
+            <p class="no-margin">La casa del voleibol dominicano</p>
+            <a href="Jugadoras.html" class="boton boton--primario">¡Conoce al equipo!</a>
+        </div>
+    </header>
+
+    <section class="History">
+        <div class="contenedor">
+            <div class="row">
+                <!-- Menú lateral -->
+                <div class="col-4">
+                    <div id="navbar-historia" class="nav flex-column">
+                        <a class="nav-link" href="#historia">Historia</a>
+                        <div class="subnav">
+                            <a class="nav-link ms-3 my-1" href="#llegada-voleibol">Llegada del voleibol a RD</a>
+                            <a class="nav-link ms-3 my-1" href="#inicios">Inicios</a>
+                        </div>
+
+                        <a class="nav-link" href="#competencias">Competencias</a>
+                        <div class="subnav">
+                            <a class="nav-link ms-3 my-1" href="#torneos-nacionales">Torneos nacionales</a>
+                            <a class="nav-link ms-3 my-1" href="#torneos-internacionales">Torneos internacionales</a>
+                            <a class="nav-link ms-3 my-1" href="#primeros-logros">Primeros logros</a>
+                        </div>
+
+                        <a class="nav-link" href="#epoca-dorada">Época dorada</a>
+
+                        <a class="nav-link" href="#actualidad">Actualidad</a>
+                        <div class="subnav">
+                            <a class="nav-link ms-3 my-1" href="#ranking">Posición en el ranking</a>
+                            <a class="nav-link ms-3 my-1" href="#futuro">Mirando al futuro</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="col-8" data-bs-spy="scroll" data-bs-target="#navbar-historia" data-bs-smooth-scroll="true"
+                    tabindex="0">
+
+                    <!-- HISTORIA -->
+                    <div id="historia">
+                        <h4>Historia</h4>
+                        <img src="Img/Historia.jpeg" alt="Historia">
+                        <p>El voleibol dominicano tiene una trayectoria que refleja la pasión y la dedicación del
+                            país por el deporte. Desde sus inicios humildes hasta convertirse en una potencia
+                            continental, el voleibol ha unido a generaciones de dominicanos y ha puesto el nombre
+                            del país en alto en escenarios internacionales. Este deporte no solo se ha convertido en
+                            una disciplina de alto rendimiento, sino en un fenómeno cultural que trasciende las
+                            canchas y se vive en cada rincón del país. La historia del voleibol dominicano es una
+                            narrativa de superación, trabajo en equipo y orgullo nacional que continúa escribiéndose
+                            con cada nuevo torneo.</p>
+                        <p>La invasión de los Estados Unidos hacia Republica Dominicana en el año 1916, hizo
+                            necesaria la práctica de este deporte en zonas urbanas, pertenecientes a Santo Domingo.
+                            La primera competencia internacional se realizó en el año 1934 en Haití. Años más tarde,
+                            en 1946 se organizó equipos de varios generos para participar en los juegos
+                            Centroamericanos por primera vez, con una representación masculina y femenina; esta
+                            última, obtuvo la medalla de oro, en el juego celebrado en Colombia.
+
+                            El origen del Voleibol se remonta desde 1895, el estadounidense William Morgan fue su
+                            inventor, cuyo juego original, estaba basada en una cancha con red de tenis con unos
+                            metros más elevados, además de un balón de baloncesto. La empresa Spalding, fue la
+                            primera compañía en crear la pelota original para este deporte.</p>
+                    </div>
+                    <br>
+
+                    <div id="llegada-voleibol">
+                        <h5>Llegada del voleibol a República Dominicana</h5>
+                        <p>El voleibol llegó a la República Dominicana en la década de 1910, introducido por
+                            educadores estadounidenses durante la ocupación militar de Estados Unidos (1916-1924).
+                            Estos maestros y oficiales militares trajeron consigo el deporte, que había sido
+                            inventado apenas dos décadas antes por William G. Morgan en Massachusetts. Inicialmente,
+                            el voleibol se practicaba de manera informal en bases militares, escuelas y centros
+                            recreativos dirigidos por estadounidenses. El juego llamó rápidamente la atención de la
+                            población local por su naturaleza accesible y dinámica, que no requería equipamiento
+                            costoso ni instalaciones sofisticadas. Las primeras redes improvisadas se levantaban en
+                            patios escolares y plazas públicas, donde jóvenes dominicanos comenzaron a experimentar
+                            con este nuevo deporte que combina agilidad, coordinación y trabajo en equipo.</p>
+                    </div>
+                    <br>
+
+                    <div id="inicios">
+                        <h5>Inicios</h5>
+                        <p>Durante los años 30 y 40, el deporte comenzó a practicarse de manera más formal en
+                            instituciones educativas, particularmente en Santo Domingo y Santiago. Escuelas
+                            secundarias y colegios privados incorporaron el voleibol en sus programas de educación
+                            física, reconociendo sus beneficios para el desarrollo físico y social de los
+                            estudiantes. En esta época, surgieron los primeros clubes deportivos urbanos donde se
+                            practicaba voleibol junto con otros deportes. Las reglas aún no estaban totalmente
+                            estandarizadas y variaban de una institución a otra, pero el entusiasmo era palpable.
+                            Profesores de educación física dominicanos comenzaron a capacitarse en las técnicas
+                            básicas del juego, muchos de ellos viajando a Cuba y Puerto Rico, países donde el
+                            voleibol ya tenía mayor desarrollo. Para finales de los años 40, ya existían equipos
+                            organizados que competían en torneos inter-escolares y exhibiciones públicas, sentando
+                            las bases para la eventual profesionalización del deporte en el país.</p>
+                    </div>
+                    <br>
+                    <br>
+
+                    <!-- COMPETENCIAS -->
+                    <div id="competencias">
+                        <h4>Competencias</h4>
+                        <img src="Img/Historia.jpeg" alt="Historia">
+                        <p>Con la creación de la Federación Dominicana de Voleibol (FEDOVOLI) en 1955
+                            La fundación de FEDOVOLI marcó un hito fundamental en la historia del voleibol
+                            dominicano. Esta organización nació de la necesidad de unificar criterios, establecer
+                            reglas oficiales y coordinar las competencias que hasta entonces se realizaban de manera
+                            dispersa. Los fundadores de FEDOVOLI fueron visionarios que entendieron la importancia
+                            de crear una estructura organizativa sólida. La federación se encargó de: estandarizar
+                            las reglas del juego según los lineamientos internacionales de la FIVB, certificar
+                            árbitros y entrenadores, registrar equipos y jugadores oficialmente, y organizar
+                            calendarios de competencias a nivel nacional. Además, FEDOVOLI se afilió a la Federación
+                            Internacional de Voleibol (FIVB) y a la Confederación Norte, Centroamericana y del
+                            Caribe de Voleibol (NORCECA), abriendo las puertas para que las selecciones dominicanas
+                            pudieran participar en competencias internacionales oficiales.</p>
+                    </div>
+                    <br>
+
+                    <div id="torneos-nacionales">
+                        <h5>Torneos Nacionales</h5>
+                        <p>Los primeros torneos nacionales sirvieron para identificar talentos y desarrollar equipos
+                            locales competitivos. La Liga Nacional de Voleibol se estableció con equipos
+                            representando diferentes provincias y clubes. Entre los torneos más importantes
+                            destacan: el Campeonato Nacional Superior, que reúne a los mejores equipos del país
+                            tanto en rama masculina como femenina; la Copa Federación, un torneo de eliminación
+                            directa; los Juegos Nacionales, donde provincias compiten por el honor regional; y
+                            torneos juveniles y escolares que alimentan las categorías superiores. Estos torneos han
+                            sido fundamentales para crear una cultura competitiva y descubrir joyas como Bethania de
+                            la Cruz, Brenda Castillo, Prisilla Rivera y Brayelin Martínez. Las competencias
+                            nacionales también han servido para desarrollar infraestructura deportiva en todo el
+                            país, con la construcción y mejora de pabellones deportivos en ciudades principales como
+                            Santo Domingo, Santiago, La Vega, San Francisco de Macorís y San Pedro de Macorís.</p>
+                    </div>
+                    <br>
+
+                    <div id="torneos-internacionales">
+                        <h5>Torneos Internacionales</h5>
+                        <p>La selección comenzó a participar en competencias regionales en la década de los 70,
+                            ganando experiencia valiosa en el Caribe y Centroamérica. Las primeras incursiones
+                            internacionales fueron en torneos de la NORCECA, donde el equipo dominicano enfrentó a
+                            potencias establecidas como Cuba, México y Puerto Rico. Aunque los resultados iniciales
+                            fueron modestos, cada participación representaba aprendizaje y motivación. Durante los
+                            años 80, República Dominicana comenzó a competir en los Juegos Centroamericanos y del
+                            Caribe, logrando sus primeras medallas. En los Juegos Panamericanos, el equipo femenino
+                            empezó a hacerse notar en la década de los 90. Los torneos clasificatorios para
+                            Campeonatos Mundiales y Juegos Olímpicos se convirtieron en objetivos prioritarios. La
+                            Copa Panamericana, el Campeonato NORCECA y la Copa Mundial FIVB se agregaron al
+                            calendario internacional del equipo. Estas experiencias forjaron el carácter competitivo
+                            de las jugadoras dominicanas y las prepararon para los éxitos venideros.</p>
+                    </div>
+                    <br>
+
+                    <div id="primeros-logros">
+                        <h5>Primeros logros</h5>
+                        <p>El equipo femenino alcanzó reconocimiento internacional en los años 90, cuando comenzó a
+                            competir de tú a tú con las mejores selecciones del continente. Las Reinas del Caribe
+                            obtuvieron su primera medalla importante en los Juegos Panamericanos de 1995 en Mar del
+                            Plata, Argentina, donde conquistaron la medalla de bronce. Este logro abrió los ojos del
+                            mundo al potencial dominicano. La consolidación llegó con la medalla de oro en los
+                            Juegos Panamericanos de Santo Domingo 2003, un momento histórico en suelo propio ante
+                            una multitud enfervorizada. Ese equipo, dirigido por el entrenador Marcos Kwiek, incluía
+                            estrellas emergentes que marcarían una época. Otros logros tempranos incluyen: múltiples
+                            medallas en Campeonatos NORCECA, clasificaciones a Campeonatos Mundiales donde mejoraron
+                            progresivamente su rendimiento, y la primera clasificación olímpica para Atenas 2004,
+                            aunque no avanzaron de la primera ronda, la experiencia fue invaluable.</p>
+                    </div>
+                    <br>
+                    <br>
+
+                    <!-- ÉPOCA DORADA -->
+                    <div id="epoca-dorada">
+                        <h4>Época dorada</h4>
+                        <img src="Img/Historia.jpeg" alt="Historia">
+                        <p>Entre 2010 y 2020, las Reinas del Caribe vivieron su época de mayor éxito, dominando
+                            torneos regionales y clasificando consistentemente a los Juegos Olímpicos. Este período
+                            estuvo marcado por: cinco medallas de oro consecutivas en la Copa Panamericana
+                            (2010-2018), dominio absoluto de los torneos NORCECA con múltiples campeonatos,
+                            clasificación a tres Juegos Olímpicos consecutivos (Londres 2012, Río 2016, Tokio 2020),
+                            subcampeonato en el Mundial de Italia 2014 (el logro más grande de la historia), y
+                            múltiples victorias sobre potencias mundiales como Brasil, Estados Unidos y Rusia. Las
+                            figuras de esta era dorada incluyen a Bethania de la Cruz (mejor opuesta del mundo en
+                            2014), Brenda Castillo (mejor líbero mundial en múltiples ocasiones), Prisilla Rivera,
+                            Annerys Vargas, Jineiry Martínez, y Niverka Marte. El equipo desarrolló un estilo de
+                            juego reconocible: defensa agresiva, contraataques veloces, y una conexión emocional en
+                            la cancha que inspiraba al país entero. Cada partido de las Reinas del Caribe se
+                            convertía en un evento nacional, con ciudades paralizadas y familias reunidas frente al
+                            televisor.</p>
+                    </div>
+                    <br>
+
+                    <!-- ACTUALIDAD -->
+                    <div id="actualidad">
+                        <h4>Actualidad</h4>
+                        <img src="Img/Historia.jpeg" alt="Historia">
+                        <p>Hoy en día, el voleibol dominicano se mantiene como una de las mayores potencias del
+                            continente, aunque enfrenta el desafío de la renovación generacional. La selección
+                            femenina continúa compitiendo al más alto nivel en la Liga de Naciones de la FIVB, donde
+                            enfrenta regularmente a las 16 mejores selecciones del mundo. El equipo ha logrado
+                            mantener su presencia en los torneos más importantes y sigue siendo favorito en
+                            competencias regionales. El desarrollo del voleibol nacional se ha fortalecido con:
+                            programas de detección de talentos en escuelas y comunidades, mejora en la
+                            infraestructura de entrenamiento con centros de alto rendimiento, mayor
+                            profesionalización de jugadoras que compiten en ligas europeas, asiáticas y
+                            sudamericanas, inversión en cuerpo técnico calificado y ciencias del deporte, y
+                            creciente apoyo mediático y de patrocinadores. Sin embargo, existen desafíos como la
+                            necesidad de renovar el plantel con nuevas estrellas, mejorar las condiciones económicas
+                            de las jugadoras, y desarrollar más el voleibol masculino que ha quedado rezagado.</p>
+                    </div>
+                    <br>
+
+                    <div id="ranking">
+                        <h5>Posición en el ranking</h5>
+                        <p>Actualmente, la selección femenina de voleibol de República Dominicana ocupa posiciones
+                            fluctuantes entre el top 10 y top 15 del ranking mundial de la FIVB. En el ranking de
+                            NORCECA (la confederación continental), las Reinas del Caribe típicamente se ubican
+                            entre las tres mejores selecciones, compitiendo directamente con Estados Unidos y Puerto
+                            Rico. El ranking mundial de la FIVB se actualiza constantemente basándose en resultados
+                            en torneos oficiales como: Liga de Naciones, Campeonatos Mundiales, Juegos Olímpicos,
+                            copas continentales, y torneos clasificatorios. República Dominicana acumula puntos
+                            importantes por su participación consistente en estos eventos. Es importante destacar
+                            que el ranking masculino dominicano se encuentra en posiciones significativamente más
+                            bajas, reflejando la necesidad de mayor desarrollo en esa rama. La posición en el
+                            ranking tiene implicaciones prácticas importantes: determina la ubicación en sorteos de
+                            torneos, influye en la clasificación a Juegos Olímpicos y Mundiales, y afecta el
+                            prestigio internacional del programa.</p>
+                    </div>
+                    <br>
+
+                    <div id="futuro">
+                        <h5>Mirando al futuro</h5>
+                        <p>Con nuevas generaciones de jugadoras emergiendo desde las categorías juveniles, la
+                            República Dominicana continúa fortaleciendo su legado en el voleibol mundial. El futuro
+                            del voleibol dominicano se construye sobre varios pilares: programas de desarrollo
+                            juvenil que identifican y forman talento desde edades tempranas, inversión en tecnología
+                            y análisis deportivo para optimizar el rendimiento, becas deportivas que permiten a
+                            jóvenes atletas estudiar y entrenar simultáneamente, y colaboración con clubes
+                            internacionales para facilitar la experiencia profesional de jugadoras dominicanas en el
+                            extranjero. Las aspiraciones incluyen: medallas en Juegos Olímpicos (objetivo histórico
+                            aún no alcanzado), campeonatos mundiales, dominio sostenido en el continente, y
+                            desarrollo del voleibol masculino para equiparar los logros femeninos. Además, existe un
+                            movimiento creciente para popularizar el voleibol de playa, donde República Dominicana
+                            tiene potencial por su geografía privilegiada. El legado de las Reinas del Caribe
+                            inspira a miles de niñas dominicanas que sueñan con representar su país, asegurando que
+                            el voleibol seguirá siendo fuente de orgullo nacional por generaciones.</p>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer mt-5">
+        <div class="footer-contenedor container py-5">
+            <div class="row text-center text-md-start">
+
+                <!-- Columna 1: Logo y descripción -->
+                <div class="col-md-4 mb-4">
+                    <img src="Img/Logo.jpg" alt="Logo Reinas del Caribe" class="footer-logo mb-3">
+                    <h3 class="footer-titulo">Reinas del Caribe</h3>
+                    <p class="footer-texto">
+                        Página creada para compartir información, logros y la pasión por el voleibol femenino
+                        dominicano.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlaces -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-subtitulo">Enlaces útiles</h4>
+                    <ul class="footer-enlaces list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="jugadoras.html">Jugadoras</a></li>
+                        <li><a href="torneos.html">Torneos y Resultados</a></li>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="Enlaces.html">Enlaces</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#politicasModal">Políticas de
+                                Privacidad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Redes sociales -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-subtitulo">Síguenos</h4>
+                    <div class="footer-redes d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://www.instagram.com/reinasdelcaribe.do?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.facebook.com/reinasdelcaribe.do/" aria-label="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://x.com/VoleiFemRD" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.youtube.com/@ReinasdelCaribe" aria-label="YouTube"><i
+                                class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Línea inferior -->
+        <div class="footer-copy text-center py-3">
+            <p>© 2025 Reinas del Caribe | Diseñado por <strong>Isabel Nakari De la Cruz Prevost</strong></p>
+        </div>
+    </footer>
+
+    <!-- ================================
+     MODAL DE POLÍTICAS DE PRIVACIDAD
+=================================== -->
+    <div class="modal fade" id="politicasModal" tabindex="-1" aria-labelledby="politicasModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="politicasModalLabel">Políticas de Privacidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        En <strong>Reinas del Caribe</strong> valoramos tu privacidad. Esta página no recopila
+                        información personal sin tu consentimiento.
+                        Toda la información compartida es utilizada exclusivamente para fines informativos y de
+                        promoción del voleibol femenino dominicano.
+                    </p>
+                    <p>
+                        No almacenamos datos sensibles ni compartimos información con terceros. Al utilizar este sitio
+                        web, aceptas nuestras condiciones
+                        de uso y política de cookies.
+                    </p>
+                    <p>
+                        Si tienes dudas sobre cómo manejamos tu información, contáctanos mediante nuestro formulario de
+                        contacto o por correo electrónico.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="Js/JavaScript.js"></script>
+</body>
+
+</html>

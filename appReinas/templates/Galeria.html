@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sitio web oficial no afiliado de las Reinas del Caribe, la selección femenina de voleibol de República Dominicana. Conoce su historia, jugadoras destacadas, torneos, resultados, galería y noticias recientes.">
+    <meta name="keywords"
+        content="Reinas del Caribe, voleibol femenino, República Dominicana, selección nacional, jugadoras, torneos, resultados, noticias, deporte dominicano, equipo de voleibol">
+    <meta name="author" content="Isabel Nakari De la Cruz Prevost">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="Img/Logo.jpg" type="image/jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Momo+Trust+Display&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Reinas del Caribe | Voleibol Femenino Dominicano</title>
+</head>
+
+<body>
+    <header class="header no-margin no-padding">
+        <div class="overlay"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark header-nav">
+            <div class="container-fluid justify-content-center">
+                <a href="index.html" class="navbar-brand">
+                    <img height="65px" src="Img/Logo.jpg" alt="Logo Reinas del Caribe" class="logo-navbar">
+                </a>
+                <!-- Botón hamburguesa (móvil) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú -->
+                <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                    <ul class="nav nav-underline d-flex flex-row gap-5">
+                        <li class="nav-item"><a class="nav-link text-white" href="Index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="Historia.html">Historia</a></li>
+
+                        <!-- Dropdown: Equipo -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Equipo</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Jugadoras.html">Jugadoras</a></li>
+                                <li><a class="dropdown-item" href="Entrenadores.html">Entrenadores</a></li>
+                                <li><a class="dropdown-item" href="Directiva.html">Directiva</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Dropdown: Eventos (¡se mantiene!) -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Eventos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Torneos.html">Torneos y resultados</a></li>
+                                <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link active text-white" href="Galeria.html">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="Tienda.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="Noticias.html">Noticias</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Texto central del header -->
+        <div class="header_texto">
+            <h1 class="logo_nombre no-margin centrar-texto"><span class="logo__bold">Reinas del Caribe</span></h1>
+            <p class="no-margin">La casa del voleibol dominicano</p>
+            <a href="Equipo.html" class="boton boton--primario">¡Conoce al equipo!</a>
+        </div>
+    </header>
+
+    <section class="Galeria">
+        <div class="contenedor">
+            <h2 class="centrar-texto">Galería</h2>
+
+            <div class="galeria-grid">
+                <div class="item"><img src="Img/BrayelinMartinez.jpg" alt="Brayelin Martínez"></div>
+                <div class="item"><img src="Img/Reinas1.jpg" alt="Reinas del Caribe"></div>
+                <div class="item"><img src="Img/BrendaCastillo.jpg" alt="Brenda Castillo"></div>
+                <div class="item"><img src="Img/Reinas2.jpg" alt="Entrenamiento Reinas"></div>
+                <div class="item"><img src="Img/BrendaCastillo3.jpg" muted loop></img></div>
+                <div class="item"><img src="Img/Reinas2.jpg" muted loop></img></div>
+                <div class="item"><img src="Img/BrayelinMartinez.jpg" alt="Brayelin Martínez"></div>
+                <div class="item"><img src="Img/Reinas1.jpg" alt="Reinas del Caribe"></div>
+            </div>
+            <div class="video">
+                <video src="Img/Video1.mp4" autoplay muted loop controls></video>
+            </div>
+            <div class="galeria-grid">
+                <div class="item"><img src="Img/BrayelinMartinez.jpg" alt="Brayelin Martínez"></div>
+                <div class="item"><img src="Img/Reinas1.jpg" alt="Reinas del Caribe"></div>
+                <div class="item"><img src="Img/BrendaCastillo.jpg" alt="Brenda Castillo"></div>
+                <div class="item"><img src="Img/Reinas2.jpg" alt="Entrenamiento Reinas"></div>
+                <div class="item"><video src="Img/Video1.mp4" muted loop></video></div>
+                <div class="item"><img src="Img/Reinas1.jpg" muted loop></img></div>
+                <div class="item"><img src="Img/BrayelinMartinez.jpg" alt="Brayelin Martínez"></div>
+                <div class="item"><img src="Img/Reinas1.jpg" alt="Reinas del Caribe"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="cerrar">&times;</span>
+        <img id="lightbox-img" src="">
+        <video id="lightbox-video" controls></video>
+    </div>
+
+
+
+
+    <footer class="footer mt-5">
+        <div class="footer-contenedor container py-5">
+            <div class="row text-center text-md-start">
+
+                <!-- Columna 1: Logo y descripción -->
+                <div class="col-md-4 mb-4">
+                    <img src="Img/Logo.jpg" alt="Logo Reinas del Caribe" class="footer-logo mb-3">
+                    <h3 class="footer-titulo">Reinas del Caribe</h3>
+                    <p class="footer-texto">
+                        Página creada para compartir información, logros y la pasión por el voleibol femenino
+                        dominicano.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlaces -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-subtitulo">Enlaces útiles</h4>
+                    <ul class="footer-enlaces list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="jugadoras.html">Jugadoras</a></li>
+                        <li><a href="torneos.html">Torneos y Resultados</a></li>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="Enlaces.html">Enlaces</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#politicasModal">Políticas de
+                                Privacidad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Redes sociales -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-subtitulo">Síguenos</h4>
+                    <div class="footer-redes d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://www.instagram.com/reinasdelcaribe.do?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.facebook.com/reinasdelcaribe.do/" aria-label="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://x.com/VoleiFemRD" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.youtube.com/@ReinasdelCaribe" aria-label="YouTube"><i
+                                class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Línea inferior -->
+        <div class="footer-copy text-center py-3">
+            <p>© 2025 Reinas del Caribe | Diseñado por <strong>Isabel Nakari De la Cruz Prevost</strong></p>
+        </div>
+    </footer>
+
+    <!-- ================================
+     MODAL DE POLÍTICAS DE PRIVACIDAD
+=================================== -->
+    <div class="modal fade" id="politicasModal" tabindex="-1" aria-labelledby="politicasModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="politicasModalLabel">Políticas de Privacidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        En <strong>Reinas del Caribe</strong> valoramos tu privacidad. Esta página no recopila
+                        información personal sin tu consentimiento.
+                        Toda la información compartida es utilizada exclusivamente para fines informativos y de
+                        promoción del voleibol femenino dominicano.
+                    </p>
+                    <p>
+                        No almacenamos datos sensibles ni compartimos información con terceros. Al utilizar este sitio
+                        web, aceptas nuestras condiciones
+                        de uso y política de cookies.
+                    </p>
+                    <p>
+                        Si tienes dudas sobre cómo manejamos tu información, contáctanos mediante nuestro formulario de
+                        contacto o por correo electrónico.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- ===== LIGHTBOX (MODAL) ===== -->
+    <div id="lightbox" class="lightbox">
+        <span class="cerrar">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <video id="lightbox-video" controls></video>
+    </div>
+     <script src="Js/JavaScript.js"></script>
+
+
+</body>
+
+</html>
