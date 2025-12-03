@@ -1,0 +1,59 @@
+{%load static%}
+<header class="header no-margin no-padding">
+    <div class="overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark header-nav">
+        <div class="container-fluid justify-content-center">
+            <a href="/index" class="navbar-brand">
+                <img height="65px" src="{% static 'Img/Logo.jpg' %}" alt="Logo Reinas del Caribe" class="logo-navbar">
+            </a>
+            <!-- Botón -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="nav nav-underline d-flex flex-row gap-5">
+                    <li class="nav-item"><a class="nav-link active text-white" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/historia">Historia</a></li>
+
+                    <!-- Dropdown: Equipo -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Equipo</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/jugadoras">Jugadoras</a></li>
+                            <li><a class="dropdown-item" href="/entrenadores">Entrenadores</a></li>
+                            <li><a class="dropdown-item" href="/directiva">Directiva</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown: Eventos (¡se mantiene!) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Eventos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/torneos">Torneos y resultados</a></li>
+                            <li><a class="dropdown-item" href="/calendario">Calendario</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link text-white" href="/Galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/Tienda">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/Noticias">Noticias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Texto central del header -->
+    <div class="header_texto">
+        <h1 class="logo_nombre no-margin centrar-texto"><span class="logo__bold">Reinas del Caribe</span></h1>
+        <p class="no-margin">La casa del voleibol dominicano</p>
+        <a href="/jugadoras" class="boton boton--primario">¡Conoce al equipo!</a>
+    </div>
+</header>
