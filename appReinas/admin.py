@@ -4,57 +4,87 @@ from .models import (
     Torneo, Evento, Galeria, Enlace, Historia
 )
 
+# --- NOTICIA ---
 class NoticiaAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'fecha_publicacion', 'autor')
-    search_fields = ('titulo', 'contenido', 'autor__username')
-    list_filter = ('fecha_publicacion',)
+    # CORREGIDO: Usar 'fecha' en lugar de 'fecha_publicacion'
+    # 'autor' eliminado, ya que no existe en el modelo Noticia
+    list_display = ('titulo', 'fecha')
+    search_fields = ('titulo', 'contenido')
+    list_filter = ('fecha',) 
+    
 admin.site.register(Noticia, NoticiaAdmin)
-    # list_display()
+
+# --- JUGADORA ---
 class JugadoraAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'posicion', 'numero_camisa')
-    search_fields = ('nombre', 'posicion')
+    # CORREGIDO: Usar 'foto' en lugar de 'numero_camisa' (que no existe)
+    list_display = ('nombre', 'posicion', 'foto')
+    search_fields = ('nombre', 'posicion', 'descripcion')
     list_filter = ('posicion',)
 admin.site.register(Jugadora, JugadoraAdmin)
 
+# --- ENTRENADOR ---
 class EntrenadorAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'rol')
-    search_fields = ('nombre', 'rol')
+    # CORREGIDO: Usar 'cargo' en lugar de 'rol'
+    list_display = ('nombre', 'cargo', 'foto')
+    search_fields = ('nombre', 'cargo', 'descripcion')
 admin.site.register(Entrenador, EntrenadorAdmin)
 
 
+# --- DIRECTIVO ---
 class DirectivoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'cargo')
-    search_fields = ('nombre', 'cargo')
+    # Correcto: 'nombre' y 'cargo' existen. Se añade 'foto'
+    list_display = ('nombre', 'cargo', 'foto')
+    search_fields = ('nombre', 'cargo', 'descripcion')
 admin.site.register(Directivo, DirectivoAdmin)
 
 
-class torneoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'fecha_inicio', 'fecha_fin')
-    search_fields = ('nombre',)
-    list_filter = ('fecha_inicio',)
-admin.site.register(Torneo, torneoAdmin)
+# --- TORNEO ---
+class TorneoAdmin(admin.ModelAdmin): # Cambiado 'torneoAdmin' a 'TorneoAdmin' (Convención)
+    # CORREGIDO: Usar 'titulo' y 'fecha' en lugar de 'nombre', 'fecha_inicio', 'fecha_fin'
+    list_display = ('titulo', 'fecha', 'imagen')
+    search_fields = ('titulo', 'descripcion')
+    list_filter = ('fecha',)
+admin.site.register(Torneo, TorneoAdmin)
 
 
+# --- EVENTO ---
 class EventoAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'fecha_evento', 'ubicacion')
-    search_fields = ('titulo', 'descripcion', 'ubicacion')
-    list_filter = ('fecha_evento',)
+    # CORREGIDO: Usar 'fecha' y 'lugar' en lugar de 'fecha_evento', 'ubicacion'
+    list_display = ('titulo', 'fecha', 'lugar')
+    search_fields = ('titulo', 'descripcion', 'lugar')
+    list_filter = ('fecha',)
 admin.site.register(Evento, EventoAdmin)
 
 
+# --- GALERIA ---
 class GaleriaAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'fecha_subida')
-    search_fields = ('titulo',)
-    list_filter = ('fecha_subida',)
+    # CORREGIDO: Usar 'imagen' y 'descripcion'. Eliminado 'fecha_subida' (que no existe)
+    list_display = ('titulo', 'descripcion', 'imagen')
+    search_fields = ('titulo', 'descripcion')
+    # list_filter = ('fecha_subida',)  # Eliminado por no existir el campo
 admin.site.register(Galeria, GaleriaAdmin)
 
+# --- ENLACE ---
 class EnlaceAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'url')
-    search_fields = ('nombre',)
+    # CORREGIDO: Usar 'titulo' en lugar de 'nombre'
+    list_display = ('titulo', 'url')
+    search_fields = ('titulo', 'url')
 
 admin.site.register(Enlace, EnlaceAdmin)
 
+# --- HISTORIA ---
 class HistoriaAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'fecha_creacion')
-    search_fields = ('titulo', 'contenido')
+    # CORREGIDO: El modelo Historia solo tiene 'contenido'. Se puede usar __str__
+    # Se añade un campo personalizado para mostrar las primeras 50 letras del contenido
+    list_display = ('id', '__str__', 'vista_previa')
+    search_fields = ('contenido',)
+    
+    # Método auxiliar para mostrar una vista previa del contenido en la lista
+    def vista_previa(self, obj):
+        return obj.contenido[:50] + '...' if len(obj.contenido) > 50 else obj.contenido
+    vista_previa.short_description = 'Contenido'
+
+# NOTA: Historia solo tiene 'contenido', 'titulo' y 'fecha_creacion' fueron eliminados
+# en la definición de tu modelo, por lo que se ajustó el list_display.
+
 admin.site.register(Historia, HistoriaAdmin)
