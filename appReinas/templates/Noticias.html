@@ -11,36 +11,32 @@
         <div class="contenedor">
             <h2 class="centrar-texto">Noticias Recientes</h2>
 
+            {% comment %}
+            titulo = models.CharField(max_length=200)
+            contenido = models.TextField()
+            fecha = models.DateField()
+            imagen = models.ImageField(upload_to='noticias/', null=True, blank=True)
+            {% endcomment %}
+
+
+
+
+
             <div class="notice-grid">
                 <!-- === NOTICIA 1 === -->
+                {%for noticia in noticias %}
                 <div class="notice-card">
-                    <img src="Img/Reinas1.jpg" alt="Victoria en la Copa Panamericana">
+                    <img src="{{ noticia.imagen.url }}" alt="{{ noticia.titulo }}">
                     <div class="notice-body">
-                        <h3>Victoria en la Copa Panamericana</h3>
-                        <p>Las Reinas del Caribe conquistan el oro tras un partido lleno de emoción y coraje...</p>
-                        <button class="btn-noticia" data-modal="noticia1">Leer más</button>
+                        <h3>{{ noticia.titulo }}</h3>
+                        <p>{{ noticia.contenido }}</p>
+                        <p>{{ noticia.fecha }}</p>
+                        <button class="btn-noticia" data-modal="{{noticia.id}}">Leer más</button>
                     </div>
                 </div>
+            {%endfor%}
 
-                <!-- === NOTICIA 2 === -->
-                <div class="notice-card">
-                    <img src="Img/Reinas2.jpg" alt="Entrenamientos rumbo a París">
-                    <div class="notice-body">
-                        <h3>Entrenamientos rumbo a París</h3>
-                        <p>El equipo intensifica su preparación para los próximos Juegos Olímpicos...</p>
-                        <button class="btn-noticia" data-modal="noticia2">Leer más</button>
-                    </div>
-                </div>
 
-                <!-- === NOTICIA 3 === -->
-                <div class="notice-card">
-                    <img src="Img/BrayelinMartinez2.jpg" alt="Brayelin Martínez es nombrada MVP">
-                    <div class="notice-body">
-                        <h3>Brayelin Martínez es nombrada MVP</h3>
-                        <p>La atacante dominicana fue reconocida como la jugadora más valiosa del torneo...</p>
-                        <button class="btn-noticia" data-modal="noticia3">Leer más</button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -48,42 +44,17 @@
     <!-- ===== MODALES ===== -->
 
     <!-- Modal 1 -->
-    <div id="noticia1" class="modal">
+
+    {%for noticia in noticias %}
+    <div id="{{noticia.id}}" class="modal">
         <div class="modal-content">
             <span class="cerrar">&times;</span>
-            <h3>Victoria en la Copa Panamericana</h3>
-            <img src="Img/Reinas1.jpg" alt="Victoria">
-            <p>Las Reinas del Caribe se coronaron campeonas tras vencer a Estados Unidos en una final
-                emocionante. Con un juego impecable, las dominicanas demostraron una vez más su poderío
-                en la región. El equipo agradeció el apoyo de la fanaticada dominicana, que llenó el estadio
-                y celebró junto a ellas este histórico triunfo.</p>
+            <h3>{{ noticia.titulo }}</h3>
+            <img src="{{ noticia.imagen.url }}" alt="{{ noticia.titulo }}">
+            <p>{{ noticia.contenido }}</p>
         </div>
     </div>
-
-    <!-- Modal 2 -->
-    <div id="noticia2" class="modal">
-        <div class="modal-content">
-            <span class="cerrar">&times;</span>
-            <h3>Entrenamientos rumbo a París</h3>
-            <img src="Img/Reinas2.jpg" alt="Entrenamiento">
-            <p>Las Reinas del Caribe intensifican su preparación para los Juegos Olímpicos de París 2025.
-                El equipo entrena a doble jornada, perfeccionando la defensa y el ataque bajo la dirección
-                de su cuerpo técnico. “Nuestro objetivo es claro: subir al podio”, afirmó la capitana del equipo.</p>
-        </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div id="noticia3" class="modal">
-        <div class="modal-content">
-            <span class="cerrar">&times;</span>
-            <h3>Brayelin Martínez es nombrada MVP</h3>
-            <img src="Img/BrayelinMartinez2.jpg" alt="Brayelin MVP">
-            <p>Brayelin Martínez fue elegida como la jugadora más valiosa de la Copa Panamericana 2025.
-                Su liderazgo, energía y precisión en los remates la convirtieron en la figura central del torneo.
-                La atacante agradeció el reconocimiento y dedicó el premio a su equipo y a todo el país.</p>
-        </div>
-    </div>
-
+    {%endfor%}
 
     {% include 'PiePagina.html' %}
 

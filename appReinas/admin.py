@@ -8,7 +8,7 @@ from .models import (
 class NoticiaAdmin(admin.ModelAdmin):
     # CORREGIDO: Usar 'fecha' en lugar de 'fecha_publicacion'
     # 'autor' eliminado, ya que no existe en el modelo Noticia
-    list_display = ('titulo', 'fecha')
+    list_display = ('titulo', 'fecha', 'imagen')
     search_fields = ('titulo', 'contenido')
     list_filter = ('fecha',) 
     
