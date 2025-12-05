@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (
     Noticia, Jugadora, Entrenador, Directivo,
-    Torneo, Evento, Galeria, Enlace, Historia
+    Torneo, Evento, Galeria, Enlace, Historia, Productos
 )
 
 # --- NOTICIA ---
@@ -88,3 +88,9 @@ class HistoriaAdmin(admin.ModelAdmin):
 # en la definición de tu modelo, por lo que se ajustó el list_display.
 
 admin.site.register(Historia, HistoriaAdmin)
+
+class adminProductos(admin.ModelAdmin):
+    list_display = ('nombre', 'precio', 'imagen','descripcion')
+    search_fields = ('nombre', 'descripcion')
+
+admin.site.register(Productos, adminProductos)
