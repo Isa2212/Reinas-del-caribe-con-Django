@@ -7,7 +7,7 @@ __pycache__/
 *.pyc
 
 # SQLite database
-db.sqlite3
+
 
 # Virtual environments
 venv/
