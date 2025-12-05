@@ -22,6 +22,7 @@ class Jugadora(models.Model):
         return self.nombre
 
 
+
 # Entrenadores
 class Entrenador(models.Model):
     nombre = models.CharField(max_length=100)

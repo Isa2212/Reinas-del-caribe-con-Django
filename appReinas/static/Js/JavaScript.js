@@ -127,3 +127,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+// Contacto
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("formContacto");
+
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();  // evita envío regular
+
+            let nombre = document.getElementById("nombre").value;
+            let correo = document.getElementById("correo").value;
+            let mensaje = document.getElementById("mensaje").value;
+
+            let asunto = `Mensaje de ${nombre}`;
+            let cuerpo =
+                `Nombre: ${nombre}%0D%0A` +
+                `Correo: ${correo}%0D%0A%0D%0A` +
+                `Mensaje:%0D%0A${mensaje}`;
+
+            window.location.href =
+            `mailto:contacto@reinasdelcaribe.com?subject=${asunto}&body=${cuerpo}`;
+        });
+    }
+
+});
