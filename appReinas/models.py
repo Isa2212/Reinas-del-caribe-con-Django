@@ -11,7 +11,7 @@ class Noticia(models.Model):
         return self.titulo
 
 
-# models.py - Primero hazlo opcional
+# Jugadoras
 class Jugadora(models.Model):
     nombre = models.CharField(max_length=100)
     posicion = models.CharField(max_length=50, blank=True)
@@ -110,3 +110,14 @@ class Productos(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+# Calendario
+from django.db import models
+
+class ActividadCalendario(models.Model):
+    titulo = models.CharField(max_length=200)
+    descripcion = models.TextField()
+    fecha = models.DateField()
+
+    def __str__(self):
+        return f"{self.titulo} – {self.fecha}"

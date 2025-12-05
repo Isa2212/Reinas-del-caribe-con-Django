@@ -8,13 +8,14 @@
             <div class="centrar-texto">
                 <h2>Calendario</h2>
             </div>
+
             <div id="calendarioCarrusel" class="carousel slide" data-bs-ride="false">
                 <div class="carousel-inner">
 
-                    <!-- ====== MES 1 ====== -->
-                    <div class="carousel-item active">
+                    {% for mes in meses %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
                         <div class="mes-header">
-                            <h3 class="centrar-texto">Marzo 2025</h3>
+                            <h3 class="centrar-texto">{{ mes.nombre }} 2025</h3>
                         </div>
 
                         <!-- Encabezado de días -->
@@ -30,291 +31,40 @@
                             </div>
                         </div>
 
-                        <!-- Cuerpo del calendario -->
+                        <!-- Cuerpo dinámico del calendario -->
                         <div class="grid-calendario text-center">
+                            {% for semana in mes.semanas %}
                             <div class="row row-cols-7">
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col">1</div>
+                                {% for celda in semana %}
+                                    {% if celda.numero == 0 %}
+                                        <div class="col empty"></div>
+                                    {% else %}
+                                        <div class="col">
+                                            {% if celda.evento %}
+                                                <div class="dia-marcado"
+                                                    tabindex="0"
+                                                    data-bs-toggle="popover"
+                                                    data-bs-trigger="focus"
+                                                    data-bs-placement="bottom"
+                                                    title="{{ celda.evento.titulo }}"
+                                                    data-bs-content="{{ celda.evento.descripcion }}">
+                                                    {{ celda.numero }}
+                                                </div>
+                                            {% else %}
+                                                {{ celda.numero }}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
-                            <div class="row row-cols-7">
-                                <div class="col">2</div>
-                                <div class="col">3</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        4
-                                    </div>
-                                </div>
-                                <div class="col">5</div>
-                                <div class="col">6</div>
-                                <div class="col">7</div>
-                                <div class="col">8</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">9</div>
-                                <div class="col">10</div>
-                                <div class="col">11</div>
-                                <div class="col">12</div>
-                                <div class="col">13</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        4
-                                    </div>
-                                </div>
-                                <div class="col">15</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">16</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        4
-                                    </div>
-                                </div>
-                                <div class="col">18</div>
-                                <div class="col">19</div>
-                                <div class="col">20</div>
-                                <div class="col">21</div>
-                                <div class="col">22</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">23</div>
-                                <div class="col">24</div>
-                                <div class="col">25</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        4
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        4
-                                    </div>
-                                </div>
-                                <div class="col">28</div>
-                                <div class="col">29</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">30</div>
-                                <div class="col">31</div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                            </div>
-
+                            {% endfor %}
                         </div>
                     </div>
+                    {% endfor %}
 
-                    <!-- ====== MES 2 ====== -->
-                    <div class="carousel-item">
-                        <div class="mes-header">
-                            <h3 class="centrar-texto">Abril 2025</h3>
-                        </div>
-
-                        <div class="dias-semana text-center fw-bold">
-                            <div class="row row-cols-7">
-                                <div class="col col-dia">Dom</div>
-                                <div class="col col-dia">Lun</div>
-                                <div class="col col-dia">Mar</div>
-                                <div class="col col-dia">Mié</div>
-                                <div class="col col-dia">Jue</div>
-                                <div class="col col-dia">Vie</div>
-                                <div class="col col-dia">Sáb</div>
-                            </div>
-                        </div>
-
-                        <div class="grid-calendario text-center">
-                            <div class="row row-cols-7">
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col">1</div>
-                                <div class="col">2</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        3
-                                    </div>
-                                </div>
-                                <div class="col">4</div>
-                                <div class="col">5</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col">6</div>
-                                <div class="col">7</div>
-                                <div class="col">8</div>
-                                <div class="col">9</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        10
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">11</div>
-                                <div class="col">12</div>
-                                <div class="col">13</div>
-                                <div class="col">14</div>
-                                <div class="col">15</div>
-                                <div class="col">16</div>
-                                <div class="col">17</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        18
-                                    </div>
-                                </div>
-                                <div class="col">19</div>
-                                <div class="col">20</div>
-                                <div class="col">21</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        22
-                                    </div>
-                                </div>
-                                <div class="col">23</div>
-                                <div class="col">24</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">25</div>
-                                <div class="col">26</div>
-                                <div class="col">27</div>
-                                <div class="col">28</div>
-                                <div class="col">29</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        30
-                                    </div>
-                                </div>
-                                <div class="col empty"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ====== MES 3 ====== -->
-                    <div class="carousel-item">
-                        <div class="mes-header">
-                            <h3 class="centrar-texto">Mayo 2025</h3>
-                        </div>
-
-                        <div class="dias-semana text-center fw-bold">
-                            <div class="row row-cols-7">
-                                <div class="col col-dia">Dom</div>
-                                <div class="col col-dia">Lun</div>
-                                <div class="col col-dia">Mar</div>
-                                <div class="col col-dia">Mié</div>
-                                <div class="col col-dia">Jue</div>
-                                <div class="col col-dia">Vie</div>
-                                <div class="col col-dia">Sáb</div>
-                            </div>
-                        </div>
-
-                        <div class="grid-calendario text-center">
-                            <div class="row row-cols-7">
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col empty"></div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        1
-                                    </div>
-                                </div>
-                                <div class="col">2</div>
-                                <div class="col">3</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">4</div>
-                                <div class="col">5</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        6
-                                    </div>
-                                </div>
-                                <div class="col">7</div>
-                                <div class="col">8</div>
-                                <div class="col">9</div>
-                                <div class="col">10</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">11</div>
-                                <div class="col">12</div>
-                                <div class="col">13</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        14
-                                    </div>
-                                </div>
-                                <div class="col">15</div>
-                                <div class="col">16</div>
-                                <div class="col">17</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">18</div>
-                                <div class="col">19</div>
-                                <div class="col">20</div>
-                                <div class="col">21</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        22
-                                    </div>
-                                </div>
-                                <div class="col">23</div>
-                                <div class="col">24</div>
-                            </div>
-                            <div class="row row-cols-7">
-                                <div class="col">25</div>
-                                <div class="col">
-                                    <div class="dia-marcado" tabindex="0" data-bs-toggle="popover"
-                                        data-bs-trigger="focus" data-bs-placement="bottom" title="Liga de Naciones"
-                                        data-bs-content="Bangkok, Tailandia · Del 9 al 15 de marzo · 16 equipos participantes.">
-                                        26
-                                    </div>
-                                </div>
-                                <div class="col">27</div>
-                                <div class="col">28</div>
-                                <div class="col">29</div>
-                                <div class="col">30</div>
-                                <div class="col">31</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- ====== Controles ====== -->
+                <!-- Controles del carrusel -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#calendarioCarrusel"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -329,10 +79,16 @@
         </div>
     </section>
 
+    {% include 'PiePagina.html' %}
 
-
-        {% include 'PiePagina.html' %}
-
+    <!-- Inicializar popovers de Bootstrap (por si no lo tenías) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+        });
+    </script>
 </body>
-
 </html>
