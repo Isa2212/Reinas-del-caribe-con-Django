@@ -18,8 +18,8 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed caja_torneo" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#torneo2" aria-expanded="false" aria-controls="torneo2">
-                            <img src="{{ torneo.imagen.url }}" alt='Logo del torneo'>
+                            data-bs-target="#{{torneo.id}}" aria-expanded="false" aria-controls="{{torneo.id}}">
+                            <img src="{% static 'Img/Logo.jpg' %}" alt='Logo del torneo'>
                             <div class="info_torneo">
                                 <div class="top_info">
                                     <div class="titulo">
@@ -41,7 +41,7 @@
                             </div>
                         </button>
                     </h2>
-                    <div id="torneo2" class="accordion-collapse collapse">
+                    <div id="{{torneo.id}}" class="accordion-collapse collapse">
                         <div class="accordion-body">
                             <p><strong>Sede:</strong> {{ torneo.sedes }}</p>
                             <p><strong>Equipos participantes:</strong> {{ torneo.equipos }}</p>

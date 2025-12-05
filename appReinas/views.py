@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import (
     Noticia, Jugadora, Entrenador, Directivo,
-    Torneo, Evento, Galeria, Enlace, Historia
+    Torneo, Evento, Galeria, Enlace, Historia,Productos
 )
 
 def index(request):
@@ -54,4 +54,5 @@ def contacto(request):
     return render(request, 'Contacto.html')
 
 def tienda(request):
-    return render(request, 'Tienda.html')
+    productos = Productos.objects.all()
+    return render(request, 'Tienda.html', {'productos': productos})

@@ -11,169 +11,22 @@
         <h2 class="centrar-texto">Tienda</h2>
 
         <div class="contenedor_tienda">
+
+            {% for producto in productos %}
             <!-- Card 1 -->
             <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
+                <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
                 <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
+                    <h5 class="card-title">{{ producto.nombre }}</h5>
                     <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
+                        {{ producto.descripcion }}
                     </p>
-                    <p class="card-price">RD$ 1,200</p>
+                    <p class="card-price">RD$ {{ producto.precio }}</p>
                     <button class="btn-comprar">Comprar</button>
                 </div>
             </div>
 
-
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-
-            <!-- Card 4 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-
-            <!-- Card 4 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-
-            <!-- Card 4 -->
-            <div class="card">
-                <img src="Img/BrayelinMartinez2.jpg" alt="Camiseta oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">
-                        Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y transpirable.
-                    </p>
-                    <p class="card-price">RD$ 1,200</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
+            {% endfor %}
 
         </div>
         </div>
