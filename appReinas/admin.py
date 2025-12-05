@@ -18,7 +18,7 @@ admin.site.register(Noticia, NoticiaAdmin)
 class JugadoraAdmin(admin.ModelAdmin):
     # CORREGIDO: Usar 'foto' en lugar de 'numero_camisa' (que no existe)
     list_display = ('nombre', 'posicion', 'foto')
-    search_fields = ('nombre', 'posicion', 'descripcion')
+    search_fields = ('nombre', 'posicion', 'foto','descripcion_breve', 'descripcion_completa')
     list_filter = ('posicion',)
 admin.site.register(Jugadora, JugadoraAdmin)
 

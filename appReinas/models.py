@@ -11,13 +11,14 @@ class Noticia(models.Model):
         return self.titulo
 
 
-# Jugadoras
+# models.py - Primero hazlo opcional
 class Jugadora(models.Model):
     nombre = models.CharField(max_length=100)
-    posicion = models.CharField(max_length=100)
-    descripcion = models.TextField()
-    foto = models.ImageField(upload_to='jugadoras/', null=True, blank=True)
-
+    posicion = models.CharField(max_length=50, blank=True)
+    foto = models.ImageField(upload_to='jugadoras/', blank=True, null=True)
+    descripcion_breve = models.TextField(max_length=200, verbose_name="Descripción breve", blank=True)  # Añade blank=True
+    descripcion_completa = models.TextField(verbose_name="Descripción completa")
+    
     def __str__(self):
         return self.nombre
 

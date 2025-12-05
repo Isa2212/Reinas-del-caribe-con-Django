@@ -246,8 +246,7 @@ section.Historia {
   object-fit: cover;
   border-radius: inherit;
 }
-
-/* JUGADORAS DESTACADAS */
+/* SECCION JUGADORAS DESTACADAS */
 section.Jugadoras_destacadas {
   width: 100%;
   padding: 4rem 0;
@@ -257,71 +256,12 @@ section.Jugadoras_destacadas {
   padding-bottom: 2rem;
 }
 
-.Jugadoras_destacadas .row {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  justify-content: center;
-}
-
-.Jugadoras_destacadas .col {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.Jugadoras_destacadas .card {
-  width: 100%;
-  height: 55rem;
-  border: 1px solid var(--gris);
-  border-radius: 1rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.Jugadoras_destacadas .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card img {
-  width: 100%;
-  height: 35rem;
-  object-fit: cover;
-  object-position: center;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  padding: 2rem;
-  flex-grow: 1;
-  align-items: center;
-}
-
-.card-title {
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: var(--negro);
-  margin-bottom: 1rem;
-}
-
-.card-text {
-  font-size: 1.6rem;
-  color: var(--negro);
-  margin-bottom: 2rem;
-}
-
 .Jugadoras_destacadas .boton--primario {
   display: block;
   margin: 4rem auto 0;
   text-align: center;
 }
+
 
 /* TORNEOS RECIENTES */
 section.Torneos-recientes {
@@ -568,114 +508,212 @@ section.Tienda {
   margin-bottom: 4rem;
 }
 
-/* PÁGINA JUGADORAS */
-.Jugadoras .row {
-  display: flex !important;
-  flex-wrap: wrap;                 
-  justify-content: center;         
-  gap: 2rem;                       
-  margin: 2.5rem auto;
-  width: 100%;
-  max-width: 134rem;               
-}
-.Jugadoras .col {
-  flex: 0 0 auto;
-  width: 30rem;
-  margin-bottom: 2rem;
+/* =========================================================================
+   SECCIONES: JUGADORAS – ENTRENADORES – DIRECTIVA
+   (Usan: section.Jugadoras / section.Entrenadores / section.Directiva
+          .container-fluid, .row, .col-md-3, .card-Jugadoras, etc.)
+   ========================================================================= */
+
+/* Sección general */
+section.Jugadoras,
+section.Entrenadores,
+section.Directiva {
+    padding: 6rem 2rem;
+    background-color: #fff;
 }
 
-.card-Jugadoras {
-  height: 40rem !important;
-  border-radius: 1rem;
-  overflow: hidden;
-  border: 1px solid var(--gris);
-  background-color: var(--blanco);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
+/* Títulos */
+section.Jugadoras h2,
+section.Entrenadores h2,
+section.Directiva h2 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    color: #2c3e50;
 }
-.card-jugadora-img {
+
+/* Contenedor para centrar el grid sin romper Bootstrap */
+section.Jugadoras .container-fluid,
+section.Entrenadores .container-fluid,
+section.Directiva .container-fluid {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* NUNCA tocar el display de .row: Bootstrap se encarga del grid */
+section.Jugadoras .row,
+section.Entrenadores .row,
+section.Directiva .row {
+    /* Solo espaciar un poco si hace falta */
+    row-gap: 2.5rem;
+}
+
+/* Columna: usamos las de Bootstrap (.col-md-3, .col-lg-3),
+   solo nos aseguramos de que la card use todo el ancho de la columna */
+section.Jugadoras .col-md-3,
+section.Entrenadores .col-md-3,
+section.Directiva .col-md-3,
+section.Jugadoras .col-lg-3,
+section.Entrenadores .col-lg-3,
+section.Directiva .col-lg-3 {
+    display: flex;
+    justify-content: center;
+}
+
+/* =================== CARD =================== */
+
+section.Jugadoras .card-Jugadoras,
+section.Entrenadores .card-Jugadoras,
+section.Directiva .card-Jugadoras {
     width: 100%;
-    height: 280px; /* puedes ajustar */
+    /* El height:45rem lo respetamos desde el inline-style */
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.Jugadoras .card-Jugadoras:hover,
+section.Entrenadores .card-Jugadoras:hover,
+section.Directiva .card-Jugadoras:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen superior */
+section.Jugadoras .card-img-container,
+section.Entrenadores .card-img-container,
+section.Directiva .card-img-container {
+    width: 100%;
+    height: 25rem;           /* fija para que todas se vean iguales */
+    overflow: hidden;
+    position: relative;
+}
+
+section.Jugadoras .card-img-container img,
+section.Entrenadores .card-img-container img,
+section.Directiva .card-img-container img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    object-position: top center;
+    transition: transform 0.4s ease;
 }
 
-.card-Jugadoras:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+section.Jugadoras .card-Jugadoras:hover .card-img-container img,
+section.Entrenadores .card-Jugadoras:hover .card-img-container img,
+section.Directiva .card-Jugadoras:hover .card-img-container img {
+    transform: scale(1.08);
 }
 
-.card-Jugadoras img {
-  width: 100%;
-  height: 27rem !important;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+/* =================== CUERPO DE LA CARD =================== */
+
+section.Jugadoras .card-Jugadoras .card-body,
+section.Entrenadores .card-Jugadoras .card-body,
+section.Directiva .card-Jugadoras .card-body {
+    flex: 1;
+    padding: 1.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
 }
 
-.card-Jugadoras .card-body {
-  flex: 1;
-  padding: 1.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+/* Título dentro de la card (nombre) */
+section.Jugadoras .card-Jugadoras .card-title,
+section.Entrenadores .card-Jugadoras .card-title,
+section.Directiva .card-Jugadoras .card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    min-height: 3.6rem;    /* Para que los nombres no descoloquen las demás */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card-Jugadoras h3 {
-  margin-top: 0.5rem;
-  font-size: 1.9rem !important;
-  color: var(--Primario1);
-  font-weight: 700;
+/* Texto breve (posición / cargo / descripción corta) */
+section.Jugadoras .card-Jugadoras .card-text,
+section.Entrenadores .card-Jugadoras .card-text,
+section.Directiva .card-Jugadoras .card-text {
+    font-size: 1.4rem;
+    color: #444;
+    line-height: 1.4;
+    min-height: 4rem;
+    max-height: 4rem;
+    overflow: hidden;
+    padding: 0 0.5rem;
 }
 
-.card-Jugadoras .card-text {
-  color: var(--negro);
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
+/* Footer con el botón */
+section.Jugadoras .card-Jugadoras .card-footer,
+section.Entrenadores .card-Jugadoras .card-footer,
+section.Directiva .card-Jugadoras .card-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
 }
 
-/* MODALES */
-.modal-dialog-scrollable .modal-body {
-  max-height: 85vh;
-  overflow-y: auto;
+/* Botón SOLO dentro de estas secciones, para no tocar otros .boton--cards */
+section.Jugadoras .card-Jugadoras .boton--cards,
+section.Entrenadores .card-Jugadoras .boton--cards,
+section.Directiva .card-Jugadoras .boton--cards {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    padding: 0.8rem 2rem;
+    border-radius: 40rem;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+    min-width: 11rem;
 }
 
-.modal-body img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 1rem;
+section.Jugadoras .card-Jugadoras .boton--cards:hover,
+section.Entrenadores .card-Jugadoras .boton--cards:hover,
+section.Directiva .card-Jugadoras .boton--cards:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-2px);
 }
 
-.modal-body {
-  padding: 0 3rem 3rem 3rem;
+/* =================== RESPONSIVE =================== */
+
+@media (max-width: 768px) {
+    section.Jugadoras .card-img-container,
+    section.Entrenadores .card-img-container,
+    section.Directiva .card-img-container {
+        height: 23rem;
+    }
 }
 
-.modal-body p {
-  text-align: justify;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  color: var(--negro);
+@media (max-width: 576px) {
+    /* En móvil, las col de Bootstrap ya se apilan solas.
+       Solo centramos y limitamos el ancho */
+    section.Jugadoras .col-md-3,
+    section.Entrenadores .col-md-3,
+    section.Directiva .col-md-3,
+    section.Jugadoras .col-lg-3,
+    section.Entrenadores .col-lg-3,
+    section.Directiva .col-lg-3 {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    section.Jugadoras .card-Jugadoras,
+    section.Entrenadores .card-Jugadoras,
+    section.Directiva .card-Jugadoras {
+        height: auto;
+        min-height: 45rem;
+    }
 }
 
-.modal-header {
-  margin-bottom: 0.5rem;
-  background-color: var(--Primario2);
-  border-radius: 1.4rem;
-}
-
-.modal-header h5 {
-  color: var(--blanco);
-  font-size: 3rem;
-  font-weight: 400 !important;
-  padding-left: 2rem;
-}
 
 /* =============================
    SECCIÓN TORNEOS

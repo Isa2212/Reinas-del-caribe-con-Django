@@ -5,12 +5,14 @@ from .models import (
 )
 
 def index(request):
-    noticias = Noticia.objects.order_by('-fecha')[:3]
+    noticias = Noticia.objects.order_by('-fecha')[:5]
     jugadoras = Jugadora.objects.all()[:3]
+    productos = Productos.objects.all()[:4]
     torneos = Torneo.objects.order_by('-fecha')[:3]
     return render(request, 'index.html', {
         'noticias': noticias,
         'jugadoras': jugadoras,
+        'productos': productos,
         'torneos': torneos,
     })
 

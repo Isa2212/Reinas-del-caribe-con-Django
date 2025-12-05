@@ -39,60 +39,32 @@
         </div>
     </section>
 
-    <section class="Jugadoras_destacadas py-5">
+    <section class="Jugadoras py-5">
         <div class="contenedor text-center">
             <h2 class="centrar-texto mb-4">Jugadoras destacadas</h2>
 
-            <!-- Inicio Cards -->
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row g-4 justify-content-center">
+                {% for j in jugadoras %}
+                    <div class="col-md-3 col-lg-3 mb-3">
+                        <div class="card-Jugadoras" style="height: 45rem !important;">
+                            <div class="card-img-container">
+                                <img src="{% if j.foto %}{{ j.foto.url }}{% else %}{% static 'Img/nofoto.png' %}{% endif %}"
+                                    class="card-jugadora-img" alt="{{ j.nombre }}">
+                            </div>
 
-                <!-- Card 1 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{% static 'Img/BrayelinMartinez2.jpg' %}" class="card-img-top"
-                            alt="Brayelin Martínez">
-                        <div class="card-body text-center">
-                            <h3 class="card-title fw-bold">Brayelin Martínez</h3>
-                            <p class="card-text">
-                                Potente atacante dominicana, reconocida por su energía y liderazgo en la cancha. Siempre
-                                sobresaliendo.
-                            </p>
-                            <a href="{% url 'jugadoras' %}" class="boton boton--cards">Leer más</a>
+                            <div class="card-body">
+                                <h3 class="card-title fw-bold">{{ j.nombre }}</h3>
+                                <p class="card-text">{{ j.descripcion_breve|default:"Descripción no disponible" }}</p>
+
+                                <div class="card-footer">
+                                    <a href="{% url 'jugadoras' %}" class="boton boton--cards">Leer más</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
+            </div>
 
-                <!-- Card 2 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{% static 'Img/GailaGonzalez.jpg' %}" class="card-img-top" alt="Gaila González">
-                        <div class="card-body text-center">
-                            <h3 class="card-title fw-bold">Gaila González</h3>
-                            <p class="card-text">
-                                Una de las mejores atacantes del Caribe, con un remate potente y determinación
-                                inigualable.
-                            </p>
-                            <a href="{% url 'jugadoras' %}" class="boton boton--cards">Leer más</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{% static 'Img/BrendaCastillo2.webp' %}" class="card-img-top" alt="Brenda Castillo">
-                        <div class="card-body text-center">
-                            <h3 class="card-title fw-bold">Brenda Castillo</h3>
-                            <p class="card-text">
-                                Legendaria jugadora dominicana, símbolo de pasión, entrega y orgullo dominicano.
-                                Considerada la mejor libero
-                            </p>
-                            <a href="{% url 'jugadoras' %}" class="boton boton--cards">Leer más</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div> <!-- fin row -->
 
             <!-- 🔹 Botón final -->
             <a href="{% url 'jugadoras' %}" class="boton boton--primario mt-5">Conócelas a todas</a>
@@ -244,84 +216,39 @@
             <h2 class="centrar-texto">Noticias recientes</h2>
 
             <div class="noticias_grid">
-                <div class="noticia">
-                    <img src="{% static 'Img/BrayelinMartinez.jpg' %}"
-                        alt="Reinas del Caribe ganan la Copa Panamericana" class="noticia-img">
-                    <h3 class="titulo-noticia">Reinas del Caribe ganan la Copa Panamericana</h3>
-                </div>
 
-                <div class="noticia">
-                    <img src="{% static 'Img/BrendaCastillo.jpg' %}" alt="Brenda Castillo es elegida mejor líbero"
-                        class="noticia-img">
-                    <h3 class="titulo-noticia">Brenda Castillo es elegida mejor líbero</h3>
-                </div>
+                {% for noticia in noticias %}
+                <a href="{% url 'noticias' %}" class="noticia {% if forloop.first %}{% elif forloop.counter == 5 %}noticia-grande{% endif %}">
+                    
+                    <img src="{% if noticia.imagen %}{{ noticia.imagen.url }}{% else %}{% static 'Img/nofoto.png' %}{% endif %}"
+                        class="noticia-img" alt="{{ noticia.titulo }}">
 
-                <div class="noticia">
-                    <img src="{% static 'Img/GailaGonzalez.jpg' %}" alt="Dominicana avanza a semifinales"
-                        class="noticia-img">
-                    <h3 class="titulo-noticia">Dominicana avanza a semifinales</h3>
-                </div>
+                    <h3 class="titulo-noticia">{{ noticia.titulo }}</h3>
 
-                <div class="noticia">
-                    <img src="{% static 'Img/Reinas1.jpg' %}" alt="Nuevas jugadoras se integran al equipo"
-                        class="noticia-img">
-                    <h3 class="titulo-noticia">Nuevas jugadoras se integran al equipo</h3>
-                </div>
+                </a>
+                {% endfor %}
 
-                <div class="noticia noticia-grande">
-                    <img src="{% static 'Img/Reinas4.1.png' %}" alt="Las Reinas preparan su participación en París 2025"
-                        class="noticia-img">
-                    <h3 class="titulo-noticia">Las Reinas preparan su participación en París 2025</h3>
-                </div>
             </div>
         </div>
     </section>
+
 
     <section class="Tienda">
         <h2 class="centrar-texto">Tienda</h2>
 
         <div class="contenedor_tienda">
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="{% static 'Img/BrayelinMartinez2.jpg' %}" alt="Brayelin Martínez">
-                <div class="card-body">
-                    <h5 class="card-title">Camiseta Oficial</h5>
-                    <p class="card-text">Camiseta de las Reinas del Caribe edición 2025. Tela deportiva ligera y
-                        transpirable.</p>
+            {% for p in productos %}
+            <div class="card h-100 shadow-sm">
+                <img src="{{ p.imagen.url }}" class="card-img-top" alt="{{ p.nombre }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ p.nombre }}</h5>
+                    <p class="card-text">{{ p.descripcion|truncatewords:20 }}</p>
+                    <strong class="card-price">${{ p.precio }}</strong>
                 </div>
             </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="{% static 'Img/GailaGonzalez.jpg' %}" alt="Gorra oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Gorra Oficial</h5>
-                    <p class="card-text">Gorra bordada con el logo del equipo, ajustable y disponible en varios
-                        colores.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="{% static 'Img/BrendaCastillo2.webp' %}" alt="Pulsera del equipo">
-                <div class="card-body">
-                    <h5 class="card-title">Pulsera del equipo</h5>
-                    <p class="card-text">Pulsera conmemorativa en silicona, con el escudo y colores dominicanos.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="card">
-                <img src="{% static 'Img/Reinas2.jpg' %}" alt="Póster oficial">
-                <div class="card-body">
-                    <h5 class="card-title">Póster Oficial</h5>
-                    <p class="card-text">Póster tamaño A3 con las jugadoras campeonas de la Copa Panamericana
-                        2025.</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
+
 
         <div class="boton-centro">
             <a href="{% url 'tienda' %}" class="boton boton--primario">Ir a la tienda</a>

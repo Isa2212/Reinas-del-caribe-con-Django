@@ -1,61 +1,82 @@
 <!DOCTYPE html>
+<html lang="es">
 {% load static %}
 {% include 'header.html' %}
 
 <body>
-    {% include 'Navbar.html' %}
+{% include 'Navbar.html' %}
 
-    <section class="Jugadoras py-5">
-        <div class="contenedor text-center">
-            <h2 class="centrar-texto mb-4">Entrenadores</h2>
+<section class="Entrenadores py-5">
+    <div class="container-fluid px-4">
+        <h2 class="centrar-texto mb-5">Entrenadores</h2>
 
-            <!-- Fila 1 -->
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                {% for entrenador in entrenadores %}
-                <!-- Card 1 -->
-                <div class="col">
-                    <div class="card-Jugadoras h-100 shadow-sm">
-                        <img src="{{entrenador.foto.url}}" class="card-img-top" alt="{{entrenador.nombre}}">
-                        <div class="card-body text-center">
-                            <h3 class="card-title fw-bold">{{entrenador.nombre}}</h3>
-                            <p class="card-text">
-                                {{entrenador.descripcion_corta}}
-                            </p>
-                            <!-- Botón que abre el modal -->
-                            <button type="button" class="boton boton--cards" data-bs-toggle="modal"
-                                data-bs-target="#modal-{{ entrenador.id }}">
+        <div class="row g-4 justify-content-center">
+            {% for entrenador in entrenadores %}
+            <div class="col-md-3 col-lg-3 mb-3">
+
+                <div class="card-Jugadoras" style="height:45rem !important;">
+                    <div class="card-img-container">
+                        <img src="{% if entrenador.foto %}{{ entrenador.foto.url }}{% else %}{% static 'Img/nofoto.png' %}{% endif %}"
+                             class="card-jugadora-img"
+                             alt="{{ entrenador.nombre }}">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="card-title">{{ entrenador.nombre }}</h3>
+
+                        <p class="card-text">{{ entrenador.cargo }}</p>
+
+                        <div class="card-footer">
+                            <button class="boton boton--cards"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalEntrenador{{ entrenador.id }}">
                                 Leer más
                             </button>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+
             </div>
+            {% endfor %}
         </div>
-    </section>
-
-    <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="modalBrayelinLabel">Brayelin Martínez</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
     </div>
+</section>
 
-    <div class="modal-body text-center">
-        <img src="{{entrenador.foto.url}}" alt="{{entrenador.nombre}}" class="img-fluid rounded mb-3">
-        <p>
-            {{entrenador.descripcion_larga}}
-        </p>
-    </div>
+<!-- MODALES -->
+{% for entrenador in entrenadores %}
+<div class="modal fade" id="modalEntrenador{{ entrenador.id }}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
 
-    </div>
-    </div>
-    </div>
+            <div class="modal-header" style="background: linear-gradient(135deg, #1a237e, #283593);">
+                <h5 class="modal-title text-white">{{ entrenador.nombre }}</h5>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
 
+            <div class="modal-body p-4">
+                <div class="row">
+
+                    <div class="col-md-5 text-center">
+                        <img src="{% if entrenador.foto %}{{ entrenador.foto.url }}{% else %}{% static 'Img/nofoto.png' %}{% endif %}"
+                             class="img-fluid rounded shadow">
+                    </div>
+
+                    <div class="col-md-7">
+                        <h4 class="mb-3">Información Detallada</h4>
+
+                        <p><strong>Cargo:</strong> {{ entrenador.cargo }}</p>
+
+                        <p>{{ entrenador.descripcion|linebreaks }}</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
+</div>
+{% endfor %}
 
-    </section>
-
-    <!-- Línea inferior -->
-    {% include 'PiePagina.html' %}
+{% include 'PiePagina.html' %}
 </body>
-
 </html>
