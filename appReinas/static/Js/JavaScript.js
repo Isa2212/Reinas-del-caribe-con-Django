@@ -154,3 +154,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+//  Galeria
+document.addEventListener("DOMContentLoaded", function () {
+
+    const items = document.querySelectorAll('.galeria-item');
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    const video = document.getElementById("lightbox-video");
+    const cerrar = document.querySelector(".cerrar");
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+
+            // Si el elemento es IMG → mostrar imagen
+            if (item.tagName === "IMG") {
+                img.src = item.src;
+                img.style.display = "block";
+
+                video.style.display = "none";
+                video.src = "";
+            } 
+            // Si es VIDEO → mostrar video
+            else if (item.tagName === "VIDEO") {
+                video.src = item.src;
+                video.style.display = "block";
+
+                img.style.display = "none";
+                img.src = "";
+            }
+
+            lightbox.style.display = "flex";
+        });
+    });
+
+    // Cerrar el lightbox
+    cerrar.addEventListener("click", () => {
+        lightbox.style.display = "none";
+        img.src = "";
+        video.pause();
+        video.src = "";
+    });
+});

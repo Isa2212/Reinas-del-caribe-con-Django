@@ -10,28 +10,30 @@
             <h2 class="centrar-texto">Galería</h2>
 
             <div class="galeria-grid">
-                <div class="item"><img src="{% static 'Img/BrayelinMartinez.jpg' %}" alt="Brayelin Martínez"></div>
-                <div class="item"><img src="{% static 'Img/Reinas1.jpg' %}" alt="Reinas del Caribe"></div>
-                <div class="item"><img src="{% static 'Img/BrendaCastillo.jpg' %}" alt="Brenda Castillo"></div>
-                <div class="item"><img src="{% static 'Img/Reinas2.jpg' %}" alt="Entrenamiento Reinas"></div>
-                <div class="item"><img src="{% static 'Img/BrendaCastillo3.jpg' %}" muted loop></img></div>
-                <div class="item"><img src="{% static 'Img/Reinas2.jpg' %}" muted loop></img></div>
-                <div class="item"><img src="{% static 'Img/BrayelinMartinez.jpg' %}" alt="Brayelin Martínez"></div>
-                <div class="item"><img src="{% static 'Img/Reinas1.jpg' %}" alt="Reinas del Caribe"></div>
+
+                {% for item in fotos %}
+                <div class="item">
+
+                    {% with url=item.imagen.url|lower %}
+
+                        {% if ".jpg" in url or ".png" in url or ".jpeg" in url %}
+                            <img src="{{ item.imagen.url }}" alt="{{ item.titulo }}" class="galeria-item">
+
+                        {% elif ".mp4" in url %}
+                            <video src="{{ item.imagen.url }}" muted loop class="galeria-item"></video>
+
+                        {% endif %}
+
+                    {% endwith %}
+
+                </div>
+                {% empty %}
+                    <p class="centrar-texto">No hay imágenes ni videos en la galería.</p>
+                {% endfor %}
+
+
             </div>
-            <div class="video">
-                <video src="{% static 'Img/Video1.mp4' %}" autoplay muted loop controls></video>
-            </div>
-            <div class="galeria-grid">
-                <div class="item"><img src="{% static 'Img/BrayelinMartinez.jpg' %}" alt="Brayelin Martínez"></div>
-                <div class="item"><img src="{% static 'Img/Reinas1.jpg' %}" alt="Reinas del Caribe"></div>
-                <div class="item"><img src="{% static 'Img/BrendaCastillo.jpg' %}" alt="Brenda Castillo"></div>
-                <div class="item"><img src="{% static 'Img/Reinas2.jpg' %}" alt="Entrenamiento Reinas"></div>
-                <div class="item"><video src="{% static 'Img/Video1.mp4' %}" muted loop></video></div>
-                <div class="item"><img src="{% static 'Img/Reinas1.jpg' %}" muted loop></img></div>
-                <div class="item"><img src="{% static 'Img/BrayelinMartinez.jpg' %}" alt="Brayelin Martínez"></div>
-                <div class="item"><img src="{% static 'Img/Reinas1.jpg' %}" alt="Reinas del Caribe"></div>
-            </div>
+
         </div>
     </section>
 
@@ -42,20 +44,7 @@
         <video id="lightbox-video" controls></video>
     </div>
 
-
-
-
- 
-        
-        <!-- ===== LIGHTBOX (MODAL) ===== -->
-        <div id="lightbox" class="lightbox">
-            <span class="cerrar">&times;</span>
-            <img id="lightbox-img" src="" alt="">
-            <video id="lightbox-video" controls></video>
-        </div>
-        
-        {% include 'PiePagina.html' %}
+    {% include 'PiePagina.html' %}
 
 </body>
-
 </html>
