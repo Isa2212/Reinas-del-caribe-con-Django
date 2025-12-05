@@ -16,7 +16,6 @@ ENV/
 *.env
 
 # Static files compiled
-staticfiles/
 media/
 
 # VSCode

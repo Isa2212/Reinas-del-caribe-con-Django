@@ -1,0 +1,1688 @@
+:root {
+  --fuenteHeading: 'Momo Trust Display', sans-serif;
+  --fuenteParrafos: 'Lexend', sans-serif;
+  --Primario1: #001437;
+  --Primario2: #B3161D;
+  --Secundario1: #005192;
+  --Secundario2: #EC1D23;
+  --gris: #D1D2D4;
+  --blanco: #ffffff;
+  --negro: #000000;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* GLOBALES */
+.contenedor {
+  width: min(90%, 134rem);
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+h1,
+h2 {
+  font-family: var(--fuenteHeading);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 6.4rem;
+}
+
+h2 {
+  font-size: 6rem;
+}
+
+h3 {
+  font-family: var(--fuenteParrafos);
+  font-weight: 800;
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-family: var(--fuenteParrafos);
+  font-size: 3rem;
+}
+
+h5 {
+  font-family: var(--fuenteParrafos);
+  font-size: 2.4rem;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.centrar-texto {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HEADER */
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 65rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: url(../Img/Reinas4.1.png) center/cover no-repeat;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.header_texto {
+  position: relative;
+  z-index: 2;
+  color: var(--blanco);
+  margin-top: 25rem !important;
+  padding: 0 2rem;
+}
+
+.header_texto h1 {
+  font-family: var(--fuenteHeading);
+  font-weight: 700;
+  font-size: 6rem;
+  color: var(--blanco);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.header_texto p {
+  font-family: var(--fuenteParrafos);
+  font-size: 2rem;
+  color: var(--blanco);
+  margin-bottom: 2rem;
+}
+
+/* BOTONES */
+.boton--primario {
+  display: inline-block;
+  background: var(--Primario2);
+  height: 6rem;
+  width: 24rem;
+  color: var(--blanco);
+  font: 600 2rem var(--fuenteParrafos);
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  border-radius: 10rem;
+  transition: background 0.3s;
+  align-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  margin: 1rem;
+  text-align: center;
+}
+
+.boton--primario:hover {
+  background-color: #8e1218;
+}
+
+.boton--cards {
+  display: inline-block;
+  background: var(--Primario1);
+  height: 3.6rem;
+  width: 13.5rem;
+  color: var(--blanco);
+  font: 500 1.6rem var(--fuenteParrafos);
+  text-decoration: none;
+  border-radius: 40rem;
+  transition: background 0.3s;
+  align-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.5rem;
+}
+
+.boton--cards:hover {
+  background-color: var(--Secundario1);
+}
+
+/* NAVBAR */
+.header-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 8.8rem !important;
+  z-index: 3;
+  background-color: var(--Primario1);
+}
+
+nav.navbar {
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: row;
+}
+
+nav.navbar .nav-item {
+  margin: 0 !important;
+  font-family: var(--fuenteParrafos);
+  font-size: 2rem;
+}
+
+nav.navbar .nav-link {
+  padding: 0 !important;
+}
+
+.navbar-brand {
+  padding-left: 3rem !important;
+  margin-right: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+/* HISTORIA */
+section.Historia {
+  min-height: 58.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.Historia_contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.Historia_texto h2 {
+  font-family: var(--fuenteHeading);
+  margin-bottom: 1rem;
+  font-size: 4rem;
+}
+
+.Historia_texto p {
+  font-family: var(--fuenteParrafos);
+  font-size: 1.6rem;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.Historia_imagen {
+  height: 40rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Historia_imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+/* SECCION JUGADORAS DESTACADAS */
+section.Jugadoras_destacadas {
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.Jugadoras_destacadas h2 {
+  padding-bottom: 2rem;
+}
+
+.Jugadoras_destacadas .boton--primario {
+  display: block;
+  margin: 4rem auto 0;
+  text-align: center;
+}
+
+
+/* TORNEOS RECIENTES */
+section.Torneos-recientes {
+  min-height: 120rem;
+  padding: 4rem 0;
+}
+.Torneos-recientes h2 {
+  margin-bottom: 2.5rem;
+}
+.Torneos-recientes .card {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid var(--gris);
+  margin-bottom: 3rem;
+  border-radius: 2rem;
+}
+.Torneos-recientes a {
+  text-decoration: none;
+  font-family: var(--fuenteParrafos);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--negro);
+}
+.Torneos-recientes a:hover {
+  color: var(--Primario1);
+  font-size: 3rem;
+}
+.card-header {
+  height: 4.5rem;
+  font-family: var(--fuenteParrafos);
+  font-size: 2rem;
+  background-color: var(--Primario2);
+  color: var(--blanco);
+  font-weight: 800;
+}
+
+.Torneos-recientes .card-body {
+  background-color: var(--blanco);
+}
+
+.Torneos-recientes .card-body h3 {
+  font-family: var(--fuenteParrafos);
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-top: 1.5rem;
+  color: var(--negro);
+}
+
+.Torneos-recientes .card-body p {
+  color: var(--negro);
+  padding: 1rem 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.Torneos-recientes .card-body img {
+  width: 99%;
+  height: 50rem;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin-top: 1rem;
+  border-radius: 1rem !important;
+}
+
+.Torneos-recientes .card-footer {
+  height: 4.5rem;
+  color: var(--blanco) !important;
+  font-family: var(--fuenteHeading);
+  font-size: 1.8rem;
+  padding: 1rem;
+  background-color: var(--Primario2);
+  align-items: center;
+}
+
+/* GALERIA */
+section.Galeria {
+  padding: 4rem 0;
+}
+
+.Galeria .contenedor {
+  padding-top: 0;
+}
+
+.Galeria h2 {
+  margin-bottom: 2rem;
+  font-size: 6rem;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 75rem;
+  position: relative;
+}
+
+.carousel-item img {
+  height: 75rem;
+  object-fit: cover;
+}
+
+.Galeria .carousel-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  pointer-events: none;
+}
+
+.carousel-caption {
+  bottom: 5%;
+  z-index: 10;
+}
+.carousel-caption p{
+  font-size: 1.4rem;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+  opacity: 100%;
+  z-index: 6;
+}
+
+/* NOTICIAS */
+section.Noticias_recientes {
+  min-height: 80rem;
+}
+
+.noticias_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.noticia {
+  position: relative;
+  overflow: hidden;
+  height: 38rem !important;
+  border-radius: 1rem;
+}
+
+.noticia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.noticia:hover img {
+  transform: scale(1.05);
+}
+
+.titulo-noticia {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  font-family: var(--fuenteParrafos);
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.noticia-grande {
+  grid-column: 1 / -1;
+  height: 48rem !important;
+}
+
+.Noticias_recientes h2 {
+  padding-bottom: 4rem;
+}
+
+/* TIENDA - CORREGIDO */
+section.Tienda {
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+.Tienda h2 {
+  padding-bottom: 4rem;
+}
+
+.contenedor_tienda {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  width: 100%;
+  max-width: 134rem;
+  margin: 0 auto;
+}
+
+.Tienda .card {
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 37rem;
+  background-color: #fff;
+  border: none;
+}
+
+.Tienda .card:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--gris);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Tienda .card img {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  display: block;
+}
+
+.Tienda .card-body {
+  padding: 2rem;
+  text-align: center;
+}
+
+.Tienda .card-title {
+  font-family: var(--fuenteParrafos);
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--negro);
+}
+
+.Tienda .card-text {
+  font-family: var(--fuenteParrafos);
+  font-size: 1.5rem;
+  color: var(--negro);
+  line-height: 1.4;
+}
+
+.boton-centro {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* =========================================================================
+   SECCIONES: JUGADORAS – ENTRENADORES – DIRECTIVA
+   (Usan: section.Jugadoras / section.Entrenadores / section.Directiva
+          .container-fluid, .row, .col-md-3, .card-Jugadoras, etc.)
+   ========================================================================= */
+
+/* Sección general */
+section.Jugadoras,
+section.Entrenadores,
+section.Directiva {
+    padding: 6rem 2rem;
+    background-color: #fff;
+}
+
+/* Títulos */
+section.Jugadoras h2,
+section.Entrenadores h2,
+section.Directiva h2 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    color: #2c3e50;
+}
+
+/* Contenedor para centrar el grid sin romper Bootstrap */
+section.Jugadoras .container-fluid,
+section.Entrenadores .container-fluid,
+section.Directiva .container-fluid {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* NUNCA tocar el display de .row: Bootstrap se encarga del grid */
+section.Jugadoras .row,
+section.Entrenadores .row,
+section.Directiva .row {
+    /* Solo espaciar un poco si hace falta */
+    row-gap: 2.5rem;
+}
+
+/* Columna: usamos las de Bootstrap (.col-md-3, .col-lg-3),
+   solo nos aseguramos de que la card use todo el ancho de la columna */
+section.Jugadoras .col-md-3,
+section.Entrenadores .col-md-3,
+section.Directiva .col-md-3,
+section.Jugadoras .col-lg-3,
+section.Entrenadores .col-lg-3,
+section.Directiva .col-lg-3 {
+    display: flex;
+    justify-content: center;
+}
+
+/* =================== CARD =================== */
+
+section.Jugadoras .card-Jugadoras,
+section.Entrenadores .card-Jugadoras,
+section.Directiva .card-Jugadoras {
+    width: 100%;
+    /* El height:45rem lo respetamos desde el inline-style */
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.Jugadoras .card-Jugadoras:hover,
+section.Entrenadores .card-Jugadoras:hover,
+section.Directiva .card-Jugadoras:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen superior */
+section.Jugadoras .card-img-container,
+section.Entrenadores .card-img-container,
+section.Directiva .card-img-container {
+    width: 100%;
+    height: 25rem;           /* fija para que todas se vean iguales */
+    overflow: hidden;
+    position: relative;
+}
+
+section.Jugadoras .card-img-container img,
+section.Entrenadores .card-img-container img,
+section.Directiva .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+}
+
+section.Jugadoras .card-Jugadoras:hover .card-img-container img,
+section.Entrenadores .card-Jugadoras:hover .card-img-container img,
+section.Directiva .card-Jugadoras:hover .card-img-container img {
+    transform: scale(1.08);
+}
+
+/* =================== CUERPO DE LA CARD =================== */
+
+section.Jugadoras .card-Jugadoras .card-body,
+section.Entrenadores .card-Jugadoras .card-body,
+section.Directiva .card-Jugadoras .card-body {
+    flex: 1;
+    padding: 1.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* Título dentro de la card (nombre) */
+section.Jugadoras .card-Jugadoras .card-title,
+section.Entrenadores .card-Jugadoras .card-title,
+section.Directiva .card-Jugadoras .card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    min-height: 3.6rem;    /* Para que los nombres no descoloquen las demás */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Texto breve (posición / cargo / descripción corta) */
+section.Jugadoras .card-Jugadoras .card-text,
+section.Entrenadores .card-Jugadoras .card-text,
+section.Directiva .card-Jugadoras .card-text {
+    font-size: 1.4rem;
+    color: #444;
+    line-height: 1.4;
+    min-height: 4rem;
+    max-height: 4rem;
+    overflow: hidden;
+    padding: 0 0.5rem;
+}
+
+/* Footer con el botón */
+section.Jugadoras .card-Jugadoras .card-footer,
+section.Entrenadores .card-Jugadoras .card-footer,
+section.Directiva .card-Jugadoras .card-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* Botón SOLO dentro de estas secciones, para no tocar otros .boton--cards */
+section.Jugadoras .card-Jugadoras .boton--cards,
+section.Entrenadores .card-Jugadoras .boton--cards,
+section.Directiva .card-Jugadoras .boton--cards {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    padding: 0.8rem 2rem;
+    border-radius: 40rem;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+    min-width: 11rem;
+}
+
+section.Jugadoras .card-Jugadoras .boton--cards:hover,
+section.Entrenadores .card-Jugadoras .boton--cards:hover,
+section.Directiva .card-Jugadoras .boton--cards:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-2px);
+}
+
+/* =================== RESPONSIVE =================== */
+
+@media (max-width: 768px) {
+    section.Jugadoras .card-img-container,
+    section.Entrenadores .card-img-container,
+    section.Directiva .card-img-container {
+        height: 23rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* En móvil, las col de Bootstrap ya se apilan solas.
+       Solo centramos y limitamos el ancho */
+    section.Jugadoras .col-md-3,
+    section.Entrenadores .col-md-3,
+    section.Directiva .col-md-3,
+    section.Jugadoras .col-lg-3,
+    section.Entrenadores .col-lg-3,
+    section.Directiva .col-lg-3 {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    section.Jugadoras .card-Jugadoras,
+    section.Entrenadores .card-Jugadoras,
+    section.Directiva .card-Jugadoras {
+        height: auto;
+        min-height: 45rem;
+    }
+}
+
+
+/* =============================
+   SECCIÓN TORNEOS
+   ============================= */
+.Torneos {
+  margin: 5rem auto;
+  width: 100%;
+}
+
+.Torneos h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* === Contenedor principal === */
+.Torneos .contenedor {
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* === Acordeón general === */
+.accordion {
+  width: 100%;
+  background: none;
+  border: none;
+}
+
+.accordion-item {
+  border: none;
+  background: none;
+  margin-bottom: 1.5rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* === Botón del encabezado === */
+.accordion-button {
+  background-color: var(--blanco) !important;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--negro);
+  transition: background 0.3s ease;
+}
+.accordion-button .caja_torneo {
+  padding: 2rem 3rem; 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--blanco) !important;
+  color: var(--Primario1);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.accordion-button::after {
+  margin-left: auto;
+}
+
+/* === Caja principal del torneo === */
+.caja_torneo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* === Imagen del torneo === */
+.caja_torneo img {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 1rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* === Información general === */
+.info_torneo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.titulo h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--Primario1);
+  margin-bottom: 0.5rem;
+}
+
+.categoria {
+  background-color: var(--Primario2);
+  color: var(--blanco);
+  font-size: 1.3rem;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  font-weight: 500;
+}
+
+/* === Fechas del torneo === */
+.fechas {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 2rem;
+}
+
+.fecha_inicio,
+.fecha_fin {
+  text-align: center;
+}
+
+.fecha_inicio {
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  padding-right: 2rem;
+}
+
+.fecha_inicio h4,
+.fecha_fin h4 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--Primario1);
+  margin: 0;
+}
+
+.fecha_inicio p,
+.fecha_fin p {
+  font-family: var(--fuenteParrafos);
+  font-size: 1.4rem;
+  color: var(--negro);
+  margin: 0;
+}
+.descripcion {
+  font-family: var(--fuenteParrafos);
+  align-content: normal;
+}
+
+/* === Descripción dentro del cuerpo === */
+.accordion-body {
+  background-color: var(--blanco);
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+/* CALENDARIO */
+section.Calendario {
+  width: 100%;
+  height: 90rem;
+}
+.Calendario h2 {
+  padding-top: 3rem;
+  color: var(--Primario1);
+}
+.mes-header {
+  font-size: 4.5rem !important;
+  background-color: var(--Primario2);
+  height: 7rem;
+  color: var(--blanco);
+  border-radius: 1rem;
+  align-content: center;
+  margin-bottom: 2rem;
+}
+
+.col-dia {
+  font-family: var(--fuenteParrafos);
+  font-size: 2.7rem !important;
+  font-weight: 700 !important;
+}
+
+.Calendario .col {
+  margin: 0 1rem;
+  font-family: var(--fuenteParrafos);
+  font-size: 2.3rem;
+  font-weight: 500;
+  align-content: center;
+}
+.Calendario .row {
+  margin-bottom: 2rem;
+}
+.Calendario .carousel-item {
+  margin: 8rem 0;
+  background: none !important;
+  background-color: transparent !important;
+}
+
+.dia-marcado {
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--Secundario1);
+  color: var(--blanco);
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
+.dia-marcado:hover {
+  background-color: var(--Primario1);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.popover {
+  width: 40rem;
+  height: 25rem;
+}
+
+.popover-body {
+  font-family: var(--fuenteParrafos);
+  font-size: 1.6rem;
+}
+
+.popover-header {
+  font-size: 2rem;
+  font-family: var(--fuenteParrafos);
+  font-weight: 700;
+  color: var(--Primario1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 10;
+  width: 5rem;
+  opacity: 0.9;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+  opacity: 0.8;
+  width: 3rem;
+  height: 3rem;
+}
+
+/* PAGINA HISTORIA */
+section.History {
+  height: 100vh;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.History .contenedor {
+  width: 98%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.History .row {
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+
+.History .col-4 {
+  width: 22%;
+  background-color: var(--blanco);
+  border-right: 2px solid rgba(0, 0, 0, 0.05);
+  padding: 3rem 3rem 3rem 5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+#navbar-historia .nav-link {
+  font-family: var(--fuenteParrafos);
+  font-size: 1.8rem;
+  color: var(--negro);
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#navbar-historia .nav-link:hover {
+  background-color: rgba(200, 200, 200, 0.2);
+  color: var(--Primario1);
+}
+
+#navbar-historia .nav-link.active {
+  background-color: var(--Primario1);
+  color: var(--blanco);
+  font-weight: 600;
+}
+
+.History .col-8 {
+  width: 75%;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.History .col-8 h4 {
+  color: var(--Primario2);
+}
+
+.History .col-8 h5 {
+  color: var(--negro);
+}
+
+.History .col-8 img {
+  margin: 1rem 0;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+}
+
+.col-8 p {
+  font-size: 1.6rem !important;
+}
+
+/* === GALERÍA === */
+section.Galeria {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.Galeria h2 {
+  font-weight: 700;
+  margin-bottom: 5rem;
+  text-align: center;
+  color: var(--Primario1);
+}
+
+/* === GRID DE IMÁGENES === */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: auto;
+}
+.galeria-grid img {
+  height: auto;
+}
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height: 30rem;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.item img,
+.item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* ===== SECCIÓN VIDEO ===== */
+.video {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video video {
+  width: 100%;
+  height: auto; 
+  border-radius: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto al pasar el mouse */
+.video video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* === LIGHTBOX === */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.lightbox img,
+.lightbox video {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  object-fit: contain;
+}
+
+.lightbox .cerrar {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 4rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.lightbox .cerrar:hover {
+  color: var(--Primario1, #ff4040);
+}
+
+/* ===== TIENDA ===== */
+section.Shop {
+  padding: 5rem 2rem;
+  background-color: #fff;
+}
+
+.Shop h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--negro, #111);
+  margin-bottom: 3rem;
+}
+
+/* === GRID DE PRODUCTOS === */
+.contenedor_tienda {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 2rem;
+}
+
+/* === CARD === */
+.contenedor_tienda .card {
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor_tienda .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === IMAGEN === */
+.contenedor_tienda .card img {
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.Tienda h2 {
+  font-size: 6rem !important;
+}
+
+.contenedor_tienda .card:hover img {
+  transform: scale(1.05);
+}
+
+/* === CUERPO DE LA CARD === */
+.contenedor_tienda .card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+/* === TÍTULO === */
+.card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--Primario2, #b00);
+  margin-bottom: 1rem;
+}
+
+/* === DESCRIPCIÓN === */
+.card-text {
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+/* === PRECIO === */
+.card-price {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--Primario1, #003d99);
+  margin-bottom: 1.5rem;
+}
+
+/* === BOTÓN === */
+.btn-comprar {
+  background-color: var(--Primario1, #003d99);
+  color: var(--blanco, #fff);
+  border: none;
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  align-self: center;
+}
+
+.btn-comprar:hover {
+  background-color: var(--Primario2, #b00);
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .contenedor_tienda {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+
+  .card-text {
+    font-size: 1.4rem;
+  }
+
+  .card-price {
+    font-size: 1.7rem;
+  }
+}
+
+/* ===== SECCIÓN NOTICE ===== */
+section.Notice {
+  padding: 5rem 2rem;
+  background-color: #fff;
+}
+
+.Notice h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--Primario1);
+}
+
+/* === GRID DE NOTICIAS === */
+.notice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* === CARD DE NOTICIA === */
+.notice-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.notice-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.notice-body {
+  padding: 2rem;
+}
+
+.notice-body h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--Primario2, #b00);
+}
+
+.notice-body p {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* === BOTÓN === */
+.btn-noticia {
+  background-color: var(--Primario1, #003d99);
+  color: #fff;
+  border: none;
+  border-radius: 3rem;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-noticia:hover {
+  background-color: var(--Primario2, #b00);
+}
+
+/* === MODAL === */
+/* === MODAL === */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+  overflow-y: auto; /* ✅ permite scroll vertical si el contenido es largo */
+  padding: 2rem; /* deja espacio para que no se pegue a los bordes */
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 1rem;
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: aparecer 0.3s ease;
+  max-height: 90vh; /* ✅ límite máximo del alto visible */
+  overflow-y: auto; /* ✅ scroll interno solo dentro del contenido */
+}
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+}
+
+.modal-content h3 {
+  font-size: 2.4rem;
+  color: var(--Primario2, #b00);
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === BOTÓN CERRAR === */
+.cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+  color: var(--Primario1, #003d99);
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/* =============================
+   FOOTER
+   ============================= */
+.footer {
+  background-color: var(--Primario1);
+  color: var(--blanco);
+  font-family: var(--fuenteParrafos);
+}
+
+.footer-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 8rem;
+  height: auto;
+}
+
+.footer-titulo {
+  font-weight: 700;
+  color: var(--blanco);
+}
+
+.footer-texto {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+/* Enlaces */
+.footer-subtitulo {
+  font-weight: 600;
+  color: var(--Primario2);
+  margin-bottom: 1rem;
+}
+
+.footer-enlaces a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: block;
+  padding: 0.3rem 0;
+  transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+  color: var(--Primario2);
+  text-decoration: underline;
+}
+
+/* Redes sociales */
+.footer-redes a {
+  color: var(--blanco);
+  font-size: 2.2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-redes a:hover {
+  color: var(--Primario2);
+  transform: scale(1.1);
+}
+
+/* Línea inferior */
+.footer-copy {
+  background-color: var(--Primario2);
+  font-size: 1.3rem;
+  color: var(--blanco);
+}
+
+.footer-redes{
+  margin: none !important;
+}
+
+/* === Modal de Políticas === */
+.modal-content {
+  border-radius: 1rem;
+  border: none;
+}
+
+.modal-header {
+  background-color: var(--Primario1);
+  color: var(--blanco);
+}
+
+.modal-body {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--negro);
+  text-align: justify;
+}
+
+.modal-footer .btn-primary {
+  background-color: var(--Primario1);
+  border: none;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: var(--Primario2);
+}
+.footer-redes a {
+  color: var(--blanco);
+  font-size: 2.2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-redes a:hover {
+  color: var(--Primario2);
+  transform: scale(1.1);
+}
+
+/* =============================
+   CONTACTO
+   ============================= */
+.Contacto {
+  background-color: var(--blanco);
+}
+
+.formulario {
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+  color: var(--Primario2);
+  font-weight: 600;
+}
+
+.form-control {
+  border: 1px solid var(--gris);
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+}
+
+.form-control:focus {
+  border-color: var(--Primario1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón Enviar mensaje */
+.btn-enviar {
+  background-color: var(--Primario1);
+  color: var(--blanco);
+  border: none;
+  border-radius: 3rem;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.btn-enviar:hover {
+  background-color: var(--Primario2);
+  transform: scale(1.05);
+}
+
+/* Botón Mailto */
+.btn-mailto {
+  background-color: var(--Primario2);
+  color: var(--blanco);
+  border: none;
+  border-radius: 3rem;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-mailto:hover {
+  background-color: var(--Primario1);
+  transform: scale(1.05);
+}
+
+.sombra {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ENLACES DE INTERÉS ===== */
+.Enlaces {
+  background-color: var(--blanco);
+}
+.card-text {
+  font-size: 2rem;
+}
+.lead {
+  font-size: 2.2rem;
+}
+.enlace-card {
+  border-radius: 1.2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enlace-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.enlace-card iframe {
+  border: none;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.btn-primario {
+  background-color: var(--Primario1);
+  color: var(--blanco);
+  border: none;
+  border-radius: 3rem;
+  padding: 0.6rem 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primario:hover {
+  background-color: var(--Primario2);
+  transform: scale(1.05);
+}
+
